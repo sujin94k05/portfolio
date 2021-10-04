@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+//load 관련 스타일입니다 + 설명페이지
+#load{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6000;
+    background: rgba($color: #ffffff, $alpha: 1.0);
+    transition: background 1s;
+    .cloud{ //구름 장막
+        max-width: unset;
+        max-height: 150%;
+        display: block;
+        position: absolute;
+        transition: all 2000ms linear, opacity 1s 500ms linear;
+        &.c1{
+            left: -23%;
+            top: -23%;
+        }
+        &.c2{
+            left: 23%;
+            top: -23%;
+        }
+        &.c3{
+            left: -23%;
+            top: 23%;
+        }
+        &.c4{
+            left: 23%;
+            top: 23%;
+        }
+    }
+    >span{ // 로딩 중 표시
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -17.5px 0 0 -50px;
+        width: 100px;
+        height: 70px;
+        font-size: 24px;
+        font-weight: 900;
+        text-align: center;
+        color: #707070;
+        transition: opacity 1s 500ms linear;
+        svg{
+            width: 32px;
+            height: 32px;
+            circle{
+                stroke-dasharray: 35 55;
+                stroke-dashoffset: 0;
+                animation: circleAni 1500ms linear infinite;
+                @keyframes circleAni {
+                    0%{stroke-dashoffset: 90;}
+                    100%{stroke-dashoffset: 0;}
+                }
+            }
+        }
+        &.on{opacity: 0;}
+    }
+    .before_start{
+        opacity: 0;
+        display: block;
+        position: absolute; left: 10vw; top: 10vh; z-index: 1;
+        width: 80vw; height: 80vh;
+        background: rgba($color: #ffffff, $alpha: 0.85);
+        box-shadow: 0 0 30px 30px rgba($color: #ffffff, $alpha: 0.85);
+        transition: opacity 1s linear;
+        h1{
+            width: 70%; height: 50%;
+            margin: 0 auto;
+            svg{
+                padding-top: 10%;
+                width: 100%;
+                @keyframes h1svg1 {
+                    from{stroke-dasharray: 438; stroke-dashoffset: 438;}
+                    to{stroke-dasharray: 438; stroke-dashoffset: 0;}
+                }
+                @keyframes h1svg2 {
+                    from{stroke-dasharray: 260; stroke-dashoffset: 260;}
+                    to{stroke-dasharray: 260; stroke-dashoffset: 0;}
+                }
+                @keyframes h1svg3 {
+                    from{stroke-dasharray: 173; stroke-dashoffset: 173;}
+                    to{stroke-dasharray: 173; stroke-dashoffset: 0;}
+                }
+                @keyframes h1svg4 {
+                    from{stroke-dasharray: 628; stroke-dashoffset: 628;}
+                    to{stroke-dasharray: 628; stroke-dashoffset: 0;}
+                }
+                @keyframes h1svg5 {
+                    from{stroke-dasharray: 2008; stroke-dashoffset: 2008;}
+                    to{stroke-dasharray: 2008; stroke-dashoffset: 0;}
+                }
+                @keyframes h1svg6 {
+                    from{stroke-dasharray: 36; stroke-dashoffset: 36;}
+                    to{stroke-dasharray: 36; stroke-dashoffset: 0;}
+                }
+            }
+        }
+        ul{
+            display: flex; 
+            width: 100%; height: 50%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            li{
+                width: 50%;
+                button{
+                    position: relative;
+                    display: block;
+                    width: 140px;
+                    height: 200px;
+                    margin: 0 auto;
+                    cursor: pointer;
+                    background: url(../img/character.png) 0 -200px no-repeat;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    span{
+                        position: absolute;
+                        display: block;
+                        bottom: -50px;
+                        width: 100%;
+                        height: 40px;
+                        text-align: center;
+                        text-indent: 10px;
+                    }
+                    &:hover{
+                        animation: frontAni 1000ms 0s infinite step-start;
+                    }
+                    &.cheat{
+                        width: 150px;
+                        height: 150px;
+                        margin-top: 40px;
+                        background: url(../img/goose.png) 0 0 no-repeat;
+                        span{
+                            text-indent: 0;
+                        }
+                    }
+                    &.cheat:hover{
+                        animation: goosefrontAni 1s infinite step-start;
+                    }
+                    &::after{
+                        position: absolute;
+                        top: -30px;
+                        right: -80px;
+                        display: block;
+                        width: 160px;
+                        height: 40px;
+                        background: rgba($color: #ffffff, $alpha: 0.85);
+                        border: 2px solid #000;
+                        border-radius: 10px;
+                        transform-origin: 90% bottom;
+                        transform: scale(0) rotate(0);
+                        transition: 300ms;
+                    }
+                    &:hover::after{
+                        transform: scale(1) rotate(10deg);
+                    }
+                    &.start::after{
+                        line-height: 36px;
+                        content: "처음이라면 클릭하세요!";
+                    }
+                    &.cheat::after{
+                        content: "작업물을 빠르게 확인하고 싶다면 클릭하세요";
+                    }
+                }
+            }
+        }
+        &.on{
+            opacity: 1;
+            z-index: 1;
+            h1{
+                svg{
+                    g:nth-of-type(1){animation: h1svg1 linear 300ms 500ms forwards;stroke-dasharray: 438; stroke-dashoffset: 438;}
+                    g:nth-of-type(2){animation: h1svg2 linear 200ms 800ms forwards;stroke-dasharray: 260; stroke-dashoffset: 260;}
+                    g:nth-of-type(3){animation: h1svg3 linear 100ms 1000ms forwards;stroke-dasharray: 173; stroke-dashoffset: 173;}
+                    g:nth-of-type(4){animation: h1svg4 linear 500ms 1100ms forwards;stroke-dasharray: 628; stroke-dashoffset: 628;}
+                    g:nth-of-type(5){animation: h1svg5 linear 1600ms 1600ms forwards;stroke-dasharray: 2008; stroke-dashoffset: 2008;}
+                    g:nth-of-type(6){animation: h1svg6 linear 150ms 3200ms forwards;stroke-dasharray: 36; stroke-dashoffset: 36;}
+                }
+            }
+        }
+        &.off{
+            z-index: -1;
+        }
+    }
+    &.load{ // 로딩 완료
+        background: rgba($color: #ffffff, $alpha: 0);
+        animation: zIndex 0s 3s forwards;
+        @keyframes zIndex {
+            from{z-index: 6000;}
+            to{z-index: -1;}
+        }
+        .cloud{
+            opacity: 0;
+            &.c1{
+                left: -225%;
+                top: -225%;
+            }
+            &.c2{
+                left: 225%;
+                top: -225%;
+            }
+            &.c3{
+                left: -225%;
+                top: 225%;
+            }
+            &.c4{
+                left: 225%;
+                top: 225%;
+            }
+        }
+    }
+}
+.explain{
+    opacity: 1;
+    z-index: -1;
+    display: block;
+    position: absolute; left: 10vw; top: 10vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+    width: 80vw; height: 80vh;
+    background: rgba($color: #ffffff, $alpha: 0.85);
+    box-shadow: 0 0 30px 30px rgba($color: #ffffff, $alpha: 0.85);
+    transition: opacity 1s linear, left 500ms;
+    h3{
+        font-size: 40px;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+    }
+    >p{
+        font-size: 16px;
+        width: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    >section{
+        position: absolute;
+        width: 50%;
+        padding: 5vh;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 24px;
+        &.ex-mt{margin-left: 45%;}
+        .pc{margin-top: 10px;}
+        .smallerimg{width: auto; height: 60px;}
+        figure{
+            margin-top: 25px;
+            line-height: 70px;
+            figcaption{
+                padding-bottom: 5px;
+                line-height: 1.5;
+            }
+            &:first-of-type{
+                img{
+                    width: 150px;
+                    height: auto;
+                }
+            }
+            &:nth-of-type(2){
+                img{
+                    width: auto;
+                    height: 50px;
+                }
+            }
+        }
+        .close{
+            cursor: pointer;
+            display: block; 
+            position: absolute;
+            right: 3%;
+            top: 0;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 50px;
+            font-family: inherit;
+        }
+
+    }
+    &.on{
+        z-index: 3000;
+    }
+    .close{
+        cursor: pointer;
+        display: block; 
+        position: absolute;
+        right: 3%;
+        top: 3%;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 50px;
+        font-family: inherit;
+    }
+}
+@for $i from 1 to 100{
+    @keyframes load#{$i}Ani{
+        0%{transform: scale(#{$i / 100});}
+        30%{transform: scale(#{$i / 100});}
+    }
+}

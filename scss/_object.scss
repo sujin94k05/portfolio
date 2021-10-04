@@ -1,0 +1,478 @@
+@mixin box($x : 0, $y : 0, $width : null, $height: null) {
+    position: absolute;
+    left: $x;
+    top: $y;
+    width: $width;
+    height: $height;
+}
+@mixin cageZIndex($z) {
+    .cage{
+        .row1{
+            z-index: $z;
+        }
+        .row2{
+            z-index: $z + 550;
+        }
+        .col1{
+            z-index: $z + 1;
+        }
+        .col2{
+            z-index: $z + 1;
+        }
+    }
+}
+#goose, .geese>li{ //메인 거위!
+    @include box(1800px, 450px, 150px, 150px);
+    background: url(../img/goose.png) 0 0 no-repeat;
+    z-index: 6000;
+    &.click{cursor: pointer;}
+}
+$dir : (front, back, left, right);
+@for $i from 1 through 4{
+    @keyframes goose#{nth($dir,$i)}Ani {
+        0%{background-position: 0 -#{150*($i - 1)}px;}
+        25%{background-position: -150px -#{150*($i - 1)}px;}
+        50%{background-position: 0 -#{150*($i - 1)}px;}
+        75%{background-position: -300px -#{150*($i - 1)}px;}
+        100%{background-position: 0 -#{150*($i - 1)}px;}
+    }
+    @keyframes fly#{nth($dir,$i)}Ani {
+        0%{background-position: 0 -#{150*($i + 2)}px;}
+        50%{background-position: -200px -#{150*($i + 2)}px;}
+        100%{background-position: 0 -#{150*($i + 2)}px;}
+    }
+    #goose,.geese>li{
+        &.#{nth($dir,$i)}{
+            animation: goose#{nth($dir,$i)}Ani 1s infinite step-start;
+        }
+        &._#{nth($dir,$i)}{
+            background-position: 0 -#{150*($i - 1)}px;
+        }
+        &.fly.back{
+            width: 200px;
+            animation: flybackAni 500ms infinite step-start;
+            z-index: 6000 !important;
+        }
+        &.fly.left{
+            width: 200px;
+            animation: flyleftAni 500ms infinite step-start;
+            z-index: 6000 !important;
+        }
+        &.fly.right{
+            width: 200px;
+            animation: flyrightAni 500ms infinite step-start;
+            z-index: 6000 !important;
+        }
+    }
+}
+
+#object{ // 기타 오브젝트
+    @include box(0,0); 
+    right: 0; bottom: 0;
+    img{
+        width: 100%; height: auto;
+    }
+    .home{ // 집
+        @include box(250px,-100px,800px,900px); 
+        z-index: 300;
+        background: url(../img/houseF.png) 50% 50% / cover no-repeat;
+        .flower{
+            background: url(../img/Flower.png) 50% 50%  / cover no-repeat;
+            transform-origin: center bottom;
+            @keyframes flower1Ani {
+                from{transform: rotateZ(-3deg);}
+                to{transform: rotateZ(3deg);}
+            }
+            @keyframes flower2Ani {
+                from{transform: rotateZ(3deg);}
+                to{transform: rotateZ(-3deg);}
+            }
+            @keyframes flower3Ani {
+                from{transform: rotateZ(-3deg);}
+                to{transform: rotateZ(3deg);}
+            }
+            @keyframes flower4Ani {
+                from{transform: rotateZ(3deg);}
+                to{transform: rotateZ(-3deg);}
+            }
+            @for $i from 1 through 4{
+                &:nth-child(#{$i}){
+                    $term : 0px;
+                    @if $i > 2 {$term : 600px}
+                    @include box(220px + $term - (140px * ($i / 2)),#{(700 + random(30))+"px"},120px,137px);
+                    animation: flower#{$i}Ani 3s #{random()+"s"} infinite alternate;
+                }
+            }
+        }
+    }
+    .crops{ // 작물들
+        $cropsH : 150;
+        @include box(0,0,100%,100%); 
+        .carrot{
+            @include box(0,2080px,1000px,600px); 
+            @for $i from 1 through 4{
+                li:nth-child(#{$i}){
+                    background: url(../img/crops.png) 20px 0 repeat-x;
+                    @include box(0,#{$cropsH * ($i - 1)}px,100%,#{$cropsH}px);
+                    z-index: 2080 + $cropsH * ($i - 1);
+                    animation: cropsAni 5s step-start infinite;
+                }
+            }
+            @keyframes cropsAni{ // 
+                $marginL : 20px;
+                0%{background-position-x: $marginL;}
+                25%{background-position-x: $marginL - 125px;}
+                50%{background-position-x: $marginL;}
+                75%{background-position-x: $marginL - 250px;}
+                100%{background-position-x: $marginL;}
+            }
+        }
+        .corn{
+            @include box(0,2910px,1000px,600px); 
+            @for $i from 1 through 4{
+                li:nth-child(#{$i}){
+                    background: url(../img/crops.png) 20px -#{$cropsH}px repeat-x;
+                    @include box(0,#{$cropsH * ($i - 1)}px,100%,#{$cropsH}px);
+                    z-index: 2910 + $cropsH * ($i - 1);
+                    animation: cropsAni 5s step-start infinite;
+                }
+            }
+        }
+        .tomato{
+            @include box(0,3760px,1000px,600px); 
+            @for $i from 1 through 4{
+                li:nth-child(#{$i}){
+                    background: url(../img/crops.png) 20px -#{$cropsH * 2}px repeat-x;
+                    @include box(0,#{$cropsH * ($i - 1)}px,100%,#{$cropsH}px);
+                    z-index: 3760 + $cropsH * ($i - 1);
+                    animation: cropsAni 5s step-start infinite;
+                }
+            }
+        }
+    }
+    .animals{ //동물들(+우리)
+        @include box(0,0,100%,100%);
+        .cage{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            .row1{
+                @include box(50%,0,calc(100% - 100px),150px);
+                transform: translate(-50%,0);
+                background: url(../img/fence_front2.png) 0 0 / auto 150px repeat-x;
+                z-index: 10;
+            }
+            .row2{
+                @include box(50%,0,calc(100% - 100px),150px);
+                transform: translate(-50%,0);
+                top: unset;
+                bottom: 0;
+                background: url(../img/fence_front2.png) 0 0 / auto 150px repeat-x;
+                z-index: 12;
+            }
+            .col1{
+                @include box(30px,50%,40px,100%);
+                transform: translate(0,-50%);
+                background: url(../img/fence_side2.png) 0 35px no-repeat;
+                z-index: 11;
+            }
+            .col2{
+                @include box(0,50%,40px,100%);
+                transform: translate(0,-50%);
+                left: unset;
+                right: 30px;
+                background: url(../img/fence_side2.png) 0 35px no-repeat;
+                z-index: 11;
+            }
+        }
+        .geeseCage{
+            @include box(1200px,0,1200px,700px);
+            @include cageZIndex(10);
+            .geese{
+                li{
+                    @for $i from 1 through 4{
+                        &:nth-child(#{$i}){
+                            left: #{5% + $i * 15%};
+                            top : calc(50% - 75px);
+                        }
+                    }
+                }
+            }
+        }
+        .pigsCage{
+            @include box(5200px,2800px,800px,700px);
+            @include cageZIndex(2800);
+            .pigs{
+                li{
+                    z-index: 100;
+                    @include box(0,0, 180px, 150px);
+                    background: url(../img/pig.png) 0 0 no-repeat;
+                    @for $i from 1 through 4{
+                        &:nth-child(#{$i}){
+                            left: #{5% + $i * 15%};
+                            top : calc(50% - 75px);
+                        }
+                        @keyframes pig#{nth($dir,$i)}Ani {
+                            0%{background-position: 0 -#{150*($i - 1)}px;}
+                            25%{background-position: -180px -#{150*($i - 1)}px;}
+                            50%{background-position: 0 -#{150*($i - 1)}px;}
+                            75%{background-position: -360px -#{150*($i - 1)}px;}
+                            100%{background-position: 0 -#{150*($i - 1)}px;}
+                        }
+                        &.#{nth($dir,$i)}{
+                            animation: pig#{nth($dir,$i)}Ani 1s infinite step-start;
+                        }
+                        &._#{nth($dir,$i)}{
+                            background-position: 0 -#{150*($i - 1)}px;
+                        }
+                    }
+                }
+            }
+        }
+        .cowsCage{
+            @include box(5200px,2000px,800px,700px);
+            @include cageZIndex(2000);
+            .cows{
+                li{
+                    z-index: 100;
+                    @include box(0,0, 200px, 200px);
+                    background: url(../img/cow.png) 0 0 no-repeat;
+                    &:nth-child(1){
+                        left: 20%;
+                        top : calc(50% - 75px);
+                    }
+                    &:nth-child(2){
+                        left: 40%;
+                        top : calc(50% - 75px);
+                    }
+                    @for $i from 1 through 4{
+                        @keyframes cow#{nth($dir,$i)}Ani {
+                            0%{background-position: 0 -#{200*($i - 1)}px;}
+                            25%{background-position: -200px -#{200*($i - 1)}px;}
+                            50%{background-position: 0 -#{200*($i - 1)}px;}
+                            75%{background-position: -400px -#{200*($i - 1)}px;}
+                            100%{background-position: 0 -#{200*($i - 1)}px;}
+                        }
+                        &.#{nth($dir,$i)}{
+                            animation: cow#{nth($dir,$i)}Ani 1s infinite step-start;
+                        }
+                        &._#{nth($dir,$i)}{
+                            background-position: 0 -#{200*($i - 1)}px;
+                        }
+                    }
+                }
+            }
+            .babycows{
+                li{
+                    z-index: 100;
+                    @include box(0,0, 120px, 120px);
+                    background: url(../img/cow.png) 0 0 / 360px 480px no-repeat;
+                    &:nth-child(1){
+                        left: 60%;
+                        top : calc(50% - 75px);
+                    }
+                    &:nth-child(2){
+                        left: 80%;
+                        top : calc(50% - 75px);
+                    }
+                    @for $i from 1 through 4{
+                        @keyframes babycow#{nth($dir,$i)}Ani {
+                            0%{background-position: 0 -#{120*($i - 1)}px;}
+                            25%{background-position: -120px -#{120*($i - 1)}px;}
+                            50%{background-position: 0 -#{120*($i - 1)}px;}
+                            75%{background-position: -240px -#{120*($i - 1)}px;}
+                            100%{background-position: 0 -#{120*($i - 1)}px;}
+                        }
+                        &.#{nth($dir,$i)}{
+                            animation: babycow#{nth($dir,$i)}Ani 1s infinite step-start;
+                        }
+                        &._#{nth($dir,$i)}{
+                            background-position: 0 -#{120*($i - 1)}px;
+                        }
+                    }
+                }
+            }
+        }
+        .sheepCage{
+            @include box(5200px,1200px,800px,700px);
+            @include cageZIndex(1200);
+            .sheep{
+                li{
+                    z-index: 100;
+                    @include box(0,0, 190px, 180px);
+                    background: url(../img/sheep.png) 0 0 no-repeat;
+                    @for $i from 1 through 4{
+                        &:nth-child(#{$i}){
+                            left: #{5% + $i * 15%};
+                            top : calc(50% - 75px);
+                        }
+                        @keyframes sheep#{nth($dir,$i)}Ani {
+                            0%{background-position: 0 -#{180*($i - 1)}px;}
+                            25%{background-position: -190px -#{180*($i - 1)}px;}
+                            50%{background-position: 0 -#{180*($i - 1)}px;}
+                            75%{background-position: -380px -#{180*($i - 1)}px;}
+                            100%{background-position: 0 -#{180*($i - 1)}px;}
+                        }
+                        &.#{nth($dir,$i)}{
+                            animation: sheep#{nth($dir,$i)}Ani 1s infinite step-start;
+                        }
+                        &._#{nth($dir,$i)}{
+                            background-position: 0 -#{180*($i - 1)}px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .trees{ //나무들
+        $treeZ : 300;
+        $treeX : (-15 190 1690 2015 274 1570 1865 1570 2525 3529 4242 3567 3221 3571 3282 3549 3167 4273 3904 2060 2365 2615 2727 2969 3464 4579 3255 3082 3392 3797 4188 4458 3617 3935 4279 3879 3639 4543 3969 4327 3729 4144 4494);
+        $treeY : (210 828 843 623 4341 2364 2794 3660 3500 3757 3931 -15 143 383 536 835 946 988 1043 1576 1840 1576 1976 1556 1216 1220 1496 2006 1910 1336 1496 1620 1686 1750 2000 2116 2260 2166 2457 2481 2740 2860 2844);
+        @include box(0,0,100%,100%); 
+        .tree{
+            $fruit : (apple blueberry lemon orange peach);
+            @include box(0,0,350px,480px);
+            background: url(../img/tree.png) 0 0 / 350px 480px no-repeat;
+            @for $i from 1 through length($treeX){
+                &:nth-child(#{$i}){
+                    left: #{nth($treeX,$i) + "px"};
+                    top: #{nth($treeY,$i) + "px"};
+                    z-index: $treeZ + nth($treeY,$i);
+                }
+            }
+            li{
+                @include box(0,0,84px,84px);
+                &:nth-child(1){
+                    left: 130px;
+                    top: 20px;
+                }
+                &:nth-child(2){
+                    left: 50px;
+                    top: 120px;
+                }
+                &:nth-child(3){
+                    left: 200px;
+                    top: 140px;
+                }
+            }
+            &.apple>li{
+                background: url(../img/fruit.png) 50% 0 / 84px auto no-repeat;
+            }
+            &.blueberry>li{
+                background: url(../img/fruit.png) 50% -84px / 84px auto no-repeat;
+            }
+            &.lemon>li{
+                background: url(../img/fruit.png) 50% -168px / 84px auto no-repeat;
+            }
+            &.orange>li{
+                background: url(../img/fruit.png) 50% -252px / 84px auto no-repeat;
+            }
+            &.peach>li{
+                background: url(../img/fruit.png) 50% -336px / 84px auto no-repeat;
+            }
+        }
+    }
+    .bridges{ // 다리
+        @include box(0,0,100%,100%); 
+        .lake{
+            @include box(2260px,4150px,1401px,844px);
+            .bridge{
+                @include box(0,0,1401px,844px);
+                background: url(../img/bridge.png) 0 0 no-repeat;
+                z-index: 1000;
+            }
+            .railing{
+                content: "";
+                display: block;
+                @include box(0,0,1401px,844px);
+                background: url(../img/bridge_railing.png) 0 0 no-repeat;
+                &:nth-of-type(2){top: -320px; z-index: 4360;background: url(../img/bridge_railing2.png) 0 0 no-repeat}
+                &:nth-of-type(3){top: -320px; z-index: 4000;}
+                &:nth-of-type(4){top: -40px; z-index: 5000;}
+            }
+        }
+        .river{
+            @include box(1130px, 1300px, 376px, 610px);
+            background: url(../img/bridge_r.png);
+            &.r1{z-index: 1300;}
+            &.r2{left: 4870px; top: 3450px; z-index: 3450;}
+        }
+    }
+    .eggs{ // 필드에 있는 계란
+        @include box(0,0,100%,100%); 
+        .goldenEgg{
+            @include box(0,0,48px,66px);
+            display: block;
+            outline: none;
+            border: none;
+            background: url(../img/egg.png) 50% 50% / 48px 66px;
+            cursor: pointer;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            &.disapear{
+                animation: disapear 1500ms 0s 1 forwards;
+            }
+            @keyframes disapear {
+                0%{box-shadow: 0 0 0 0 rgba(255,211,50,0),0 0 0 0 inset rgba(73, 62, 19, 0); transform: scale(1);}
+                60%{box-shadow: 0 0 30px 10px rgba(255,211,50,0.76),0 0 30px 10px inset rgba(255,211,50,0.5); transform: scale(1);}
+                90%{box-shadow: 0 0 30px 3px rgba(255,211,50,0.76),0 0 30px 10px inset rgba(255,211,50,0.5); transform: scale(1);}
+                100%{box-shadow: 0 0 30px 3px rgba(255,211,50,0.76),0 0 30px 10px inset rgba(255,211,50,0.5); transform: scale(0);}
+            }
+        }
+    }
+}
+#controller{
+    .eggPlate{ // 링크걸린 계란
+        @include box(0,0,100vw,100px); 
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        li{
+            position: relative;
+            width: 20%;
+            height: 99px;
+            &:not(:first-child) .goldenEgg{
+                line-height: 40px;
+            }
+            .goldenEgg{
+                animation: eggAni 500ms 0s 1 forwards;
+                @include box(50%,0,72px,59px);
+                margin-left: -36px;
+                display: block;
+                outline: none;
+                border: none;
+                background: url(../img/egg.png) 50% 0 no-repeat;
+                cursor: pointer;
+                border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+                text-align: center;
+                padding-top: 40px;
+                font-weight: bold;
+                transition: box-shadow 300ms;
+                &:hover{
+                    text-decoration: none;
+                    box-shadow: 0 0 30px 10px rgba(255,211,50,0.76),0 0 30px 10px inset rgba(255,211,50,0.5);
+                }
+                &.blink{
+                    position: relative;
+                    animation: eggBlinkAni 500ms alternate infinite;
+                    &:after{
+                        content: "Open it!";
+                        display: block; width: 100px; height: 50px;
+                        position: absolute; left: 50%; top: 100%;
+                        background: url(../img/egg_bubble.png) 0 0 no-repeat;
+                        text-align: center; line-height: 60px;
+                        font-size: 16px;
+                    }
+                }
+                @keyframes eggAni {
+                    from{transform: scale(0);}
+                    to{transform: scale(1);}
+                }
+                @keyframes eggBlinkAni {
+                    from{box-shadow: 0 0 30px 10px rgba(255,211,50,0.76),0 0 30px 10px inset rgba(255,211,50,0.5);}
+                    to{box-shadow: 0 0 0 0 rgba(255,211,50,0.76),0 0 0 0 inset rgba(255,211,50,0.5);}
+                }
+            }
+        }
+    }
+}

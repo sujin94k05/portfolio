@@ -1,0 +1,3024 @@
+@charset "UTF-8";
+@import url(./reset.css);
+/*  up => 1             down => 4
+    left => 2           right => 8
+    left up => 3        right up => 9
+    left down => 6      right down => 12    */
+#char {
+  width: 140px;
+  height: 200px;
+  background: url(../img/character.png) 0 -200px no-repeat;
+  z-index: 10;
+  position: absolute;
+  left: 570px;
+  top: 700px;
+  z-index: 700; }
+  #char._1 {
+    animation: backAni 1000ms 0s infinite step-start; }
+
+@keyframes backAni {
+  0% {
+    background-position: 0 0; }
+  25% {
+    background-position: -140px 0; }
+  50% {
+    background-position: 0 0; }
+  75% {
+    background-position: -280px 0; }
+  100% {
+    background-position: 0 0; } }
+  #char._2 {
+    animation: leftAni 1000ms 0s infinite step-start; }
+
+@keyframes leftAni {
+  0% {
+    background-position: 0 -600px; }
+  25% {
+    background-position: -140px -600px; }
+  50% {
+    background-position: 0 -600px; }
+  75% {
+    background-position: -280px -600px; }
+  100% {
+    background-position: 0 -600px; } }
+  #char._4 {
+    animation: frontAni 1000ms 0s infinite step-start; }
+
+@keyframes frontAni {
+  0% {
+    background-position: 0 -200px; }
+  25% {
+    background-position: -140px -200px; }
+  50% {
+    background-position: 0 -200px; }
+  75% {
+    background-position: -280px -200px; }
+  100% {
+    background-position: 0 -200px; } }
+  #char._8 {
+    animation: rightAni 1000ms 0s infinite step-start; }
+
+@keyframes rightAni {
+  0% {
+    background-position: 0 -400px; }
+  25% {
+    background-position: -140px -400px; }
+  50% {
+    background-position: 0 -400px; }
+  75% {
+    background-position: -280px -400px; }
+  100% {
+    background-position: 0 -400px; } }
+  #char._3 {
+    animation: leftAni 1000ms 0s infinite step-start; }
+
+@keyframes leftAni {
+  0% {
+    background-position: 0 -600px; }
+  25% {
+    background-position: -140px -600px; }
+  50% {
+    background-position: 0 -600px; }
+  75% {
+    background-position: -280px -600px; }
+  100% {
+    background-position: 0 -600px; } }
+  #char._6 {
+    animation: leftAni 1000ms 0s infinite step-start; }
+
+@keyframes leftAni {
+  0% {
+    background-position: 0 -600px; }
+  25% {
+    background-position: -140px -600px; }
+  50% {
+    background-position: 0 -600px; }
+  75% {
+    background-position: -280px -600px; }
+  100% {
+    background-position: 0 -600px; } }
+  #char._9 {
+    animation: rightAni 1000ms 0s infinite step-start; }
+
+@keyframes rightAni {
+  0% {
+    background-position: 0 -400px; }
+  25% {
+    background-position: -140px -400px; }
+  50% {
+    background-position: 0 -400px; }
+  75% {
+    background-position: -280px -400px; }
+  100% {
+    background-position: 0 -400px; } }
+  #char._12 {
+    animation: rightAni 1000ms 0s infinite step-start; }
+
+@keyframes rightAni {
+  0% {
+    background-position: 0 -400px; }
+  25% {
+    background-position: -140px -400px; }
+  50% {
+    background-position: 0 -400px; }
+  75% {
+    background-position: -280px -400px; }
+  100% {
+    background-position: 0 -400px; } }
+  #char.__1 {
+    background-position: 0 0; }
+  #char.__2 {
+    background-position: 0 -600px; }
+  #char.__4 {
+    background-position: 0 -200px; }
+  #char.__8 {
+    background-position: 0 -400px; }
+  #char.__3 {
+    background-position: 0 -600px; }
+  #char.__6 {
+    background-position: 0 -600px; }
+  #char.__9 {
+    background-position: 0 -400px; }
+  #char.__12 {
+    background-position: 0 -400px; }
+  #char .ment {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    bottom: 80%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    background: url(../img/bubble.png) 0 0/100% 127px no-repeat;
+    transition: width 300ms, height 300ms; }
+    #char .ment.move {
+      width: 201px;
+      height: 127px;
+      background: url(../img/bubble_move.png) 0 0 no-repeat;
+      animation: bubbleMove 300ms alternate infinite; }
+
+@keyframes bubbleMove {
+  from {
+    background: url(../img/bubble_move.png) 0 0 no-repeat; }
+  to {
+    background: url(../img/bubble_move_.png) 0 0 no-repeat; } }
+    #char .ment.get {
+      width: 201px;
+      height: 127px;
+      background: url(../img/bubble_get.png) 0 0 no-repeat;
+      animation: bubbleGet 300ms alternate infinite; }
+
+@keyframes bubbleGet {
+  from {
+    background: url(../img/bubble_get.png) 0 0 no-repeat; }
+  to {
+    background: url(../img/bubble_get_.png) 0 0 no-repeat; } }
+    #char .ment.ex {
+      width: 127px;
+      height: 127px;
+      background: url(../img/bubble_ex.png) 0 0 no-repeat; }
+    #char .ment.ment1 {
+      width: 250px;
+      height: 127px;
+      font-size: 20px;
+      line-height: 120px;
+      text-align: center; }
+    #char .ment.ment2 {
+      width: 200px;
+      height: 127px;
+      font-size: 20px;
+      line-height: 120px;
+      text-align: center; }
+    #char .ment.ment3 {
+      width: 300px;
+      height: 127px;
+      font-size: 20px;
+      line-height: 120px;
+      text-align: center; }
+
+#goose, .geese > li {
+  position: absolute;
+  left: 1800px;
+  top: 450px;
+  width: 150px;
+  height: 150px;
+  background: url(../img/goose.png) 0 0 no-repeat;
+  z-index: 6000; }
+  #goose.click, .geese > li.click {
+    cursor: pointer; }
+
+@keyframes goosefrontAni {
+  0% {
+    background-position: 0 -0px; }
+  25% {
+    background-position: -150px -0px; }
+  50% {
+    background-position: 0 -0px; }
+  75% {
+    background-position: -300px -0px; }
+  100% {
+    background-position: 0 -0px; } }
+
+@keyframes flyfrontAni {
+  0% {
+    background-position: 0 -450px; }
+  50% {
+    background-position: -200px -450px; }
+  100% {
+    background-position: 0 -450px; } }
+
+#goose.front, .geese > li.front {
+  animation: goosefrontAni 1s infinite step-start; }
+
+#goose._front, .geese > li._front {
+  background-position: 0 -0px; }
+
+#goose.fly.back, .geese > li.fly.back {
+  width: 200px;
+  animation: flybackAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.left, .geese > li.fly.left {
+  width: 200px;
+  animation: flyleftAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.right, .geese > li.fly.right {
+  width: 200px;
+  animation: flyrightAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+@keyframes goosebackAni {
+  0% {
+    background-position: 0 -150px; }
+  25% {
+    background-position: -150px -150px; }
+  50% {
+    background-position: 0 -150px; }
+  75% {
+    background-position: -300px -150px; }
+  100% {
+    background-position: 0 -150px; } }
+
+@keyframes flybackAni {
+  0% {
+    background-position: 0 -600px; }
+  50% {
+    background-position: -200px -600px; }
+  100% {
+    background-position: 0 -600px; } }
+
+#goose.back, .geese > li.back {
+  animation: goosebackAni 1s infinite step-start; }
+
+#goose._back, .geese > li._back {
+  background-position: 0 -150px; }
+
+#goose.fly.back, .geese > li.fly.back {
+  width: 200px;
+  animation: flybackAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.left, .geese > li.fly.left {
+  width: 200px;
+  animation: flyleftAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.right, .geese > li.fly.right {
+  width: 200px;
+  animation: flyrightAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+@keyframes gooseleftAni {
+  0% {
+    background-position: 0 -300px; }
+  25% {
+    background-position: -150px -300px; }
+  50% {
+    background-position: 0 -300px; }
+  75% {
+    background-position: -300px -300px; }
+  100% {
+    background-position: 0 -300px; } }
+
+@keyframes flyleftAni {
+  0% {
+    background-position: 0 -750px; }
+  50% {
+    background-position: -200px -750px; }
+  100% {
+    background-position: 0 -750px; } }
+
+#goose.left, .geese > li.left {
+  animation: gooseleftAni 1s infinite step-start; }
+
+#goose._left, .geese > li._left {
+  background-position: 0 -300px; }
+
+#goose.fly.back, .geese > li.fly.back {
+  width: 200px;
+  animation: flybackAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.left, .geese > li.fly.left {
+  width: 200px;
+  animation: flyleftAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.right, .geese > li.fly.right {
+  width: 200px;
+  animation: flyrightAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+@keyframes gooserightAni {
+  0% {
+    background-position: 0 -450px; }
+  25% {
+    background-position: -150px -450px; }
+  50% {
+    background-position: 0 -450px; }
+  75% {
+    background-position: -300px -450px; }
+  100% {
+    background-position: 0 -450px; } }
+
+@keyframes flyrightAni {
+  0% {
+    background-position: 0 -900px; }
+  50% {
+    background-position: -200px -900px; }
+  100% {
+    background-position: 0 -900px; } }
+
+#goose.right, .geese > li.right {
+  animation: gooserightAni 1s infinite step-start; }
+
+#goose._right, .geese > li._right {
+  background-position: 0 -450px; }
+
+#goose.fly.back, .geese > li.fly.back {
+  width: 200px;
+  animation: flybackAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.left, .geese > li.fly.left {
+  width: 200px;
+  animation: flyleftAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#goose.fly.right, .geese > li.fly.right {
+  width: 200px;
+  animation: flyrightAni 500ms infinite step-start;
+  z-index: 6000 !important; }
+
+#object {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; }
+  #object img {
+    width: 100%;
+    height: auto; }
+  #object .home {
+    position: absolute;
+    left: 250px;
+    top: -100px;
+    width: 800px;
+    height: 900px;
+    z-index: 300;
+    background: url(../img/houseF.png) 50% 50%/cover no-repeat; }
+    #object .home .flower {
+      background: url(../img/Flower.png) 50% 50%/cover no-repeat;
+      transform-origin: center bottom; }
+
+@keyframes flower1Ani {
+  from {
+    transform: rotateZ(-3deg); }
+  to {
+    transform: rotateZ(3deg); } }
+
+@keyframes flower2Ani {
+  from {
+    transform: rotateZ(3deg); }
+  to {
+    transform: rotateZ(-3deg); } }
+
+@keyframes flower3Ani {
+  from {
+    transform: rotateZ(-3deg); }
+  to {
+    transform: rotateZ(3deg); } }
+
+@keyframes flower4Ani {
+  from {
+    transform: rotateZ(3deg); }
+  to {
+    transform: rotateZ(-3deg); } }
+      #object .home .flower:nth-child(1) {
+        position: absolute;
+        left: 150px;
+        top: 711px;
+        width: 120px;
+        height: 137px;
+        animation: flower1Ani 3s 0.05864s infinite alternate; }
+      #object .home .flower:nth-child(2) {
+        position: absolute;
+        left: 80px;
+        top: 719px;
+        width: 120px;
+        height: 137px;
+        animation: flower2Ani 3s 0.21153s infinite alternate; }
+      #object .home .flower:nth-child(3) {
+        position: absolute;
+        left: 610px;
+        top: 729px;
+        width: 120px;
+        height: 137px;
+        animation: flower3Ani 3s 0.73357s infinite alternate; }
+      #object .home .flower:nth-child(4) {
+        position: absolute;
+        left: 540px;
+        top: 712px;
+        width: 120px;
+        height: 137px;
+        animation: flower4Ani 3s 0.10321s infinite alternate; }
+  #object .crops {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    #object .crops .carrot {
+      position: absolute;
+      left: 0;
+      top: 2080px;
+      width: 1000px;
+      height: 600px; }
+      #object .crops .carrot li:nth-child(1) {
+        background: url(../img/crops.png) 20px 0 repeat-x;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 100%;
+        height: 150px;
+        z-index: 2080;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .carrot li:nth-child(2) {
+        background: url(../img/crops.png) 20px 0 repeat-x;
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
+        height: 150px;
+        z-index: 2230;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .carrot li:nth-child(3) {
+        background: url(../img/crops.png) 20px 0 repeat-x;
+        position: absolute;
+        left: 0;
+        top: 300px;
+        width: 100%;
+        height: 150px;
+        z-index: 2380;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .carrot li:nth-child(4) {
+        background: url(../img/crops.png) 20px 0 repeat-x;
+        position: absolute;
+        left: 0;
+        top: 450px;
+        width: 100%;
+        height: 150px;
+        z-index: 2530;
+        animation: cropsAni 5s step-start infinite; }
+
+@keyframes cropsAni {
+  0% {
+    background-position-x: 20px; }
+  25% {
+    background-position-x: -105px; }
+  50% {
+    background-position-x: 20px; }
+  75% {
+    background-position-x: -230px; }
+  100% {
+    background-position-x: 20px; } }
+    #object .crops .corn {
+      position: absolute;
+      left: 0;
+      top: 2910px;
+      width: 1000px;
+      height: 600px; }
+      #object .crops .corn li:nth-child(1) {
+        background: url(../img/crops.png) 20px -150px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 100%;
+        height: 150px;
+        z-index: 2910;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .corn li:nth-child(2) {
+        background: url(../img/crops.png) 20px -150px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
+        height: 150px;
+        z-index: 3060;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .corn li:nth-child(3) {
+        background: url(../img/crops.png) 20px -150px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 300px;
+        width: 100%;
+        height: 150px;
+        z-index: 3210;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .corn li:nth-child(4) {
+        background: url(../img/crops.png) 20px -150px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 450px;
+        width: 100%;
+        height: 150px;
+        z-index: 3360;
+        animation: cropsAni 5s step-start infinite; }
+    #object .crops .tomato {
+      position: absolute;
+      left: 0;
+      top: 3760px;
+      width: 1000px;
+      height: 600px; }
+      #object .crops .tomato li:nth-child(1) {
+        background: url(../img/crops.png) 20px -300px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 100%;
+        height: 150px;
+        z-index: 3760;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .tomato li:nth-child(2) {
+        background: url(../img/crops.png) 20px -300px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
+        height: 150px;
+        z-index: 3910;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .tomato li:nth-child(3) {
+        background: url(../img/crops.png) 20px -300px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 300px;
+        width: 100%;
+        height: 150px;
+        z-index: 4060;
+        animation: cropsAni 5s step-start infinite; }
+      #object .crops .tomato li:nth-child(4) {
+        background: url(../img/crops.png) 20px -300px repeat-x;
+        position: absolute;
+        left: 0;
+        top: 450px;
+        width: 100%;
+        height: 150px;
+        z-index: 4210;
+        animation: cropsAni 5s step-start infinite; }
+  #object .animals {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    #object .animals .cage {
+      position: relative;
+      width: 100%;
+      height: 100%; }
+      #object .animals .cage .row1 {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: calc(100% - 100px);
+        height: 150px;
+        transform: translate(-50%, 0);
+        background: url(../img/fence_front2.png) 0 0/auto 150px repeat-x;
+        z-index: 10; }
+      #object .animals .cage .row2 {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: calc(100% - 100px);
+        height: 150px;
+        transform: translate(-50%, 0);
+        top: unset;
+        bottom: 0;
+        background: url(../img/fence_front2.png) 0 0/auto 150px repeat-x;
+        z-index: 12; }
+      #object .animals .cage .col1 {
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        width: 40px;
+        height: 100%;
+        transform: translate(0, -50%);
+        background: url(../img/fence_side2.png) 0 35px no-repeat;
+        z-index: 11; }
+      #object .animals .cage .col2 {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 40px;
+        height: 100%;
+        transform: translate(0, -50%);
+        left: unset;
+        right: 30px;
+        background: url(../img/fence_side2.png) 0 35px no-repeat;
+        z-index: 11; }
+    #object .animals .geeseCage {
+      position: absolute;
+      left: 1200px;
+      top: 0;
+      width: 1200px;
+      height: 700px; }
+      #object .animals .geeseCage .cage .row1 {
+        z-index: 10; }
+      #object .animals .geeseCage .cage .row2 {
+        z-index: 560; }
+      #object .animals .geeseCage .cage .col1 {
+        z-index: 11; }
+      #object .animals .geeseCage .cage .col2 {
+        z-index: 11; }
+      #object .animals .geeseCage .geese li:nth-child(1) {
+        left: 20%;
+        top: calc(50% - 75px); }
+      #object .animals .geeseCage .geese li:nth-child(2) {
+        left: 35%;
+        top: calc(50% - 75px); }
+      #object .animals .geeseCage .geese li:nth-child(3) {
+        left: 50%;
+        top: calc(50% - 75px); }
+      #object .animals .geeseCage .geese li:nth-child(4) {
+        left: 65%;
+        top: calc(50% - 75px); }
+    #object .animals .pigsCage {
+      position: absolute;
+      left: 5200px;
+      top: 2800px;
+      width: 800px;
+      height: 700px; }
+      #object .animals .pigsCage .cage .row1 {
+        z-index: 2800; }
+      #object .animals .pigsCage .cage .row2 {
+        z-index: 3350; }
+      #object .animals .pigsCage .cage .col1 {
+        z-index: 2801; }
+      #object .animals .pigsCage .cage .col2 {
+        z-index: 2801; }
+      #object .animals .pigsCage .pigs li {
+        z-index: 100;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 180px;
+        height: 150px;
+        background: url(../img/pig.png) 0 0 no-repeat; }
+        #object .animals .pigsCage .pigs li:nth-child(1) {
+          left: 20%;
+          top: calc(50% - 75px); }
+
+@keyframes pigfrontAni {
+  0% {
+    background-position: 0 -0px; }
+  25% {
+    background-position: -180px -0px; }
+  50% {
+    background-position: 0 -0px; }
+  75% {
+    background-position: -360px -0px; }
+  100% {
+    background-position: 0 -0px; } }
+        #object .animals .pigsCage .pigs li.front {
+          animation: pigfrontAni 1s infinite step-start; }
+        #object .animals .pigsCage .pigs li._front {
+          background-position: 0 -0px; }
+        #object .animals .pigsCage .pigs li:nth-child(2) {
+          left: 35%;
+          top: calc(50% - 75px); }
+
+@keyframes pigbackAni {
+  0% {
+    background-position: 0 -150px; }
+  25% {
+    background-position: -180px -150px; }
+  50% {
+    background-position: 0 -150px; }
+  75% {
+    background-position: -360px -150px; }
+  100% {
+    background-position: 0 -150px; } }
+        #object .animals .pigsCage .pigs li.back {
+          animation: pigbackAni 1s infinite step-start; }
+        #object .animals .pigsCage .pigs li._back {
+          background-position: 0 -150px; }
+        #object .animals .pigsCage .pigs li:nth-child(3) {
+          left: 50%;
+          top: calc(50% - 75px); }
+
+@keyframes pigleftAni {
+  0% {
+    background-position: 0 -300px; }
+  25% {
+    background-position: -180px -300px; }
+  50% {
+    background-position: 0 -300px; }
+  75% {
+    background-position: -360px -300px; }
+  100% {
+    background-position: 0 -300px; } }
+        #object .animals .pigsCage .pigs li.left {
+          animation: pigleftAni 1s infinite step-start; }
+        #object .animals .pigsCage .pigs li._left {
+          background-position: 0 -300px; }
+        #object .animals .pigsCage .pigs li:nth-child(4) {
+          left: 65%;
+          top: calc(50% - 75px); }
+
+@keyframes pigrightAni {
+  0% {
+    background-position: 0 -450px; }
+  25% {
+    background-position: -180px -450px; }
+  50% {
+    background-position: 0 -450px; }
+  75% {
+    background-position: -360px -450px; }
+  100% {
+    background-position: 0 -450px; } }
+        #object .animals .pigsCage .pigs li.right {
+          animation: pigrightAni 1s infinite step-start; }
+        #object .animals .pigsCage .pigs li._right {
+          background-position: 0 -450px; }
+    #object .animals .cowsCage {
+      position: absolute;
+      left: 5200px;
+      top: 2000px;
+      width: 800px;
+      height: 700px; }
+      #object .animals .cowsCage .cage .row1 {
+        z-index: 2000; }
+      #object .animals .cowsCage .cage .row2 {
+        z-index: 2550; }
+      #object .animals .cowsCage .cage .col1 {
+        z-index: 2001; }
+      #object .animals .cowsCage .cage .col2 {
+        z-index: 2001; }
+      #object .animals .cowsCage .cows li {
+        z-index: 100;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        background: url(../img/cow.png) 0 0 no-repeat; }
+        #object .animals .cowsCage .cows li:nth-child(1) {
+          left: 20%;
+          top: calc(50% - 75px); }
+        #object .animals .cowsCage .cows li:nth-child(2) {
+          left: 40%;
+          top: calc(50% - 75px); }
+
+@keyframes cowfrontAni {
+  0% {
+    background-position: 0 -0px; }
+  25% {
+    background-position: -200px -0px; }
+  50% {
+    background-position: 0 -0px; }
+  75% {
+    background-position: -400px -0px; }
+  100% {
+    background-position: 0 -0px; } }
+        #object .animals .cowsCage .cows li.front {
+          animation: cowfrontAni 1s infinite step-start; }
+        #object .animals .cowsCage .cows li._front {
+          background-position: 0 -0px; }
+
+@keyframes cowbackAni {
+  0% {
+    background-position: 0 -200px; }
+  25% {
+    background-position: -200px -200px; }
+  50% {
+    background-position: 0 -200px; }
+  75% {
+    background-position: -400px -200px; }
+  100% {
+    background-position: 0 -200px; } }
+        #object .animals .cowsCage .cows li.back {
+          animation: cowbackAni 1s infinite step-start; }
+        #object .animals .cowsCage .cows li._back {
+          background-position: 0 -200px; }
+
+@keyframes cowleftAni {
+  0% {
+    background-position: 0 -400px; }
+  25% {
+    background-position: -200px -400px; }
+  50% {
+    background-position: 0 -400px; }
+  75% {
+    background-position: -400px -400px; }
+  100% {
+    background-position: 0 -400px; } }
+        #object .animals .cowsCage .cows li.left {
+          animation: cowleftAni 1s infinite step-start; }
+        #object .animals .cowsCage .cows li._left {
+          background-position: 0 -400px; }
+
+@keyframes cowrightAni {
+  0% {
+    background-position: 0 -600px; }
+  25% {
+    background-position: -200px -600px; }
+  50% {
+    background-position: 0 -600px; }
+  75% {
+    background-position: -400px -600px; }
+  100% {
+    background-position: 0 -600px; } }
+        #object .animals .cowsCage .cows li.right {
+          animation: cowrightAni 1s infinite step-start; }
+        #object .animals .cowsCage .cows li._right {
+          background-position: 0 -600px; }
+      #object .animals .cowsCage .babycows li {
+        z-index: 100;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 120px;
+        height: 120px;
+        background: url(../img/cow.png) 0 0/360px 480px no-repeat; }
+        #object .animals .cowsCage .babycows li:nth-child(1) {
+          left: 60%;
+          top: calc(50% - 75px); }
+        #object .animals .cowsCage .babycows li:nth-child(2) {
+          left: 80%;
+          top: calc(50% - 75px); }
+
+@keyframes babycowfrontAni {
+  0% {
+    background-position: 0 -0px; }
+  25% {
+    background-position: -120px -0px; }
+  50% {
+    background-position: 0 -0px; }
+  75% {
+    background-position: -240px -0px; }
+  100% {
+    background-position: 0 -0px; } }
+        #object .animals .cowsCage .babycows li.front {
+          animation: babycowfrontAni 1s infinite step-start; }
+        #object .animals .cowsCage .babycows li._front {
+          background-position: 0 -0px; }
+
+@keyframes babycowbackAni {
+  0% {
+    background-position: 0 -120px; }
+  25% {
+    background-position: -120px -120px; }
+  50% {
+    background-position: 0 -120px; }
+  75% {
+    background-position: -240px -120px; }
+  100% {
+    background-position: 0 -120px; } }
+        #object .animals .cowsCage .babycows li.back {
+          animation: babycowbackAni 1s infinite step-start; }
+        #object .animals .cowsCage .babycows li._back {
+          background-position: 0 -120px; }
+
+@keyframes babycowleftAni {
+  0% {
+    background-position: 0 -240px; }
+  25% {
+    background-position: -120px -240px; }
+  50% {
+    background-position: 0 -240px; }
+  75% {
+    background-position: -240px -240px; }
+  100% {
+    background-position: 0 -240px; } }
+        #object .animals .cowsCage .babycows li.left {
+          animation: babycowleftAni 1s infinite step-start; }
+        #object .animals .cowsCage .babycows li._left {
+          background-position: 0 -240px; }
+
+@keyframes babycowrightAni {
+  0% {
+    background-position: 0 -360px; }
+  25% {
+    background-position: -120px -360px; }
+  50% {
+    background-position: 0 -360px; }
+  75% {
+    background-position: -240px -360px; }
+  100% {
+    background-position: 0 -360px; } }
+        #object .animals .cowsCage .babycows li.right {
+          animation: babycowrightAni 1s infinite step-start; }
+        #object .animals .cowsCage .babycows li._right {
+          background-position: 0 -360px; }
+    #object .animals .sheepCage {
+      position: absolute;
+      left: 5200px;
+      top: 1200px;
+      width: 800px;
+      height: 700px; }
+      #object .animals .sheepCage .cage .row1 {
+        z-index: 1200; }
+      #object .animals .sheepCage .cage .row2 {
+        z-index: 1750; }
+      #object .animals .sheepCage .cage .col1 {
+        z-index: 1201; }
+      #object .animals .sheepCage .cage .col2 {
+        z-index: 1201; }
+      #object .animals .sheepCage .sheep li {
+        z-index: 100;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 190px;
+        height: 180px;
+        background: url(../img/sheep.png) 0 0 no-repeat; }
+        #object .animals .sheepCage .sheep li:nth-child(1) {
+          left: 20%;
+          top: calc(50% - 75px); }
+
+@keyframes sheepfrontAni {
+  0% {
+    background-position: 0 -0px; }
+  25% {
+    background-position: -190px -0px; }
+  50% {
+    background-position: 0 -0px; }
+  75% {
+    background-position: -380px -0px; }
+  100% {
+    background-position: 0 -0px; } }
+        #object .animals .sheepCage .sheep li.front {
+          animation: sheepfrontAni 1s infinite step-start; }
+        #object .animals .sheepCage .sheep li._front {
+          background-position: 0 -0px; }
+        #object .animals .sheepCage .sheep li:nth-child(2) {
+          left: 35%;
+          top: calc(50% - 75px); }
+
+@keyframes sheepbackAni {
+  0% {
+    background-position: 0 -180px; }
+  25% {
+    background-position: -190px -180px; }
+  50% {
+    background-position: 0 -180px; }
+  75% {
+    background-position: -380px -180px; }
+  100% {
+    background-position: 0 -180px; } }
+        #object .animals .sheepCage .sheep li.back {
+          animation: sheepbackAni 1s infinite step-start; }
+        #object .animals .sheepCage .sheep li._back {
+          background-position: 0 -180px; }
+        #object .animals .sheepCage .sheep li:nth-child(3) {
+          left: 50%;
+          top: calc(50% - 75px); }
+
+@keyframes sheepleftAni {
+  0% {
+    background-position: 0 -360px; }
+  25% {
+    background-position: -190px -360px; }
+  50% {
+    background-position: 0 -360px; }
+  75% {
+    background-position: -380px -360px; }
+  100% {
+    background-position: 0 -360px; } }
+        #object .animals .sheepCage .sheep li.left {
+          animation: sheepleftAni 1s infinite step-start; }
+        #object .animals .sheepCage .sheep li._left {
+          background-position: 0 -360px; }
+        #object .animals .sheepCage .sheep li:nth-child(4) {
+          left: 65%;
+          top: calc(50% - 75px); }
+
+@keyframes sheeprightAni {
+  0% {
+    background-position: 0 -540px; }
+  25% {
+    background-position: -190px -540px; }
+  50% {
+    background-position: 0 -540px; }
+  75% {
+    background-position: -380px -540px; }
+  100% {
+    background-position: 0 -540px; } }
+        #object .animals .sheepCage .sheep li.right {
+          animation: sheeprightAni 1s infinite step-start; }
+        #object .animals .sheepCage .sheep li._right {
+          background-position: 0 -540px; }
+  #object .trees {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    #object .trees .tree {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 350px;
+      height: 480px;
+      background: url(../img/tree.png) 0 0/350px 480px no-repeat; }
+      #object .trees .tree:nth-child(1) {
+        left: -15px;
+        top: 210px;
+        z-index: 510; }
+      #object .trees .tree:nth-child(2) {
+        left: 190px;
+        top: 828px;
+        z-index: 1128; }
+      #object .trees .tree:nth-child(3) {
+        left: 1690px;
+        top: 843px;
+        z-index: 1143; }
+      #object .trees .tree:nth-child(4) {
+        left: 2015px;
+        top: 623px;
+        z-index: 923; }
+      #object .trees .tree:nth-child(5) {
+        left: 274px;
+        top: 4341px;
+        z-index: 4641; }
+      #object .trees .tree:nth-child(6) {
+        left: 1570px;
+        top: 2364px;
+        z-index: 2664; }
+      #object .trees .tree:nth-child(7) {
+        left: 1865px;
+        top: 2794px;
+        z-index: 3094; }
+      #object .trees .tree:nth-child(8) {
+        left: 1570px;
+        top: 3660px;
+        z-index: 3960; }
+      #object .trees .tree:nth-child(9) {
+        left: 2525px;
+        top: 3500px;
+        z-index: 3800; }
+      #object .trees .tree:nth-child(10) {
+        left: 3529px;
+        top: 3757px;
+        z-index: 4057; }
+      #object .trees .tree:nth-child(11) {
+        left: 4242px;
+        top: 3931px;
+        z-index: 4231; }
+      #object .trees .tree:nth-child(12) {
+        left: 3567px;
+        top: -15px;
+        z-index: 285; }
+      #object .trees .tree:nth-child(13) {
+        left: 3221px;
+        top: 143px;
+        z-index: 443; }
+      #object .trees .tree:nth-child(14) {
+        left: 3571px;
+        top: 383px;
+        z-index: 683; }
+      #object .trees .tree:nth-child(15) {
+        left: 3282px;
+        top: 536px;
+        z-index: 836; }
+      #object .trees .tree:nth-child(16) {
+        left: 3549px;
+        top: 835px;
+        z-index: 1135; }
+      #object .trees .tree:nth-child(17) {
+        left: 3167px;
+        top: 946px;
+        z-index: 1246; }
+      #object .trees .tree:nth-child(18) {
+        left: 4273px;
+        top: 988px;
+        z-index: 1288; }
+      #object .trees .tree:nth-child(19) {
+        left: 3904px;
+        top: 1043px;
+        z-index: 1343; }
+      #object .trees .tree:nth-child(20) {
+        left: 2060px;
+        top: 1576px;
+        z-index: 1876; }
+      #object .trees .tree:nth-child(21) {
+        left: 2365px;
+        top: 1840px;
+        z-index: 2140; }
+      #object .trees .tree:nth-child(22) {
+        left: 2615px;
+        top: 1576px;
+        z-index: 1876; }
+      #object .trees .tree:nth-child(23) {
+        left: 2727px;
+        top: 1976px;
+        z-index: 2276; }
+      #object .trees .tree:nth-child(24) {
+        left: 2969px;
+        top: 1556px;
+        z-index: 1856; }
+      #object .trees .tree:nth-child(25) {
+        left: 3464px;
+        top: 1216px;
+        z-index: 1516; }
+      #object .trees .tree:nth-child(26) {
+        left: 4579px;
+        top: 1220px;
+        z-index: 1520; }
+      #object .trees .tree:nth-child(27) {
+        left: 3255px;
+        top: 1496px;
+        z-index: 1796; }
+      #object .trees .tree:nth-child(28) {
+        left: 3082px;
+        top: 2006px;
+        z-index: 2306; }
+      #object .trees .tree:nth-child(29) {
+        left: 3392px;
+        top: 1910px;
+        z-index: 2210; }
+      #object .trees .tree:nth-child(30) {
+        left: 3797px;
+        top: 1336px;
+        z-index: 1636; }
+      #object .trees .tree:nth-child(31) {
+        left: 4188px;
+        top: 1496px;
+        z-index: 1796; }
+      #object .trees .tree:nth-child(32) {
+        left: 4458px;
+        top: 1620px;
+        z-index: 1920; }
+      #object .trees .tree:nth-child(33) {
+        left: 3617px;
+        top: 1686px;
+        z-index: 1986; }
+      #object .trees .tree:nth-child(34) {
+        left: 3935px;
+        top: 1750px;
+        z-index: 2050; }
+      #object .trees .tree:nth-child(35) {
+        left: 4279px;
+        top: 2000px;
+        z-index: 2300; }
+      #object .trees .tree:nth-child(36) {
+        left: 3879px;
+        top: 2116px;
+        z-index: 2416; }
+      #object .trees .tree:nth-child(37) {
+        left: 3639px;
+        top: 2260px;
+        z-index: 2560; }
+      #object .trees .tree:nth-child(38) {
+        left: 4543px;
+        top: 2166px;
+        z-index: 2466; }
+      #object .trees .tree:nth-child(39) {
+        left: 3969px;
+        top: 2457px;
+        z-index: 2757; }
+      #object .trees .tree:nth-child(40) {
+        left: 4327px;
+        top: 2481px;
+        z-index: 2781; }
+      #object .trees .tree:nth-child(41) {
+        left: 3729px;
+        top: 2740px;
+        z-index: 3040; }
+      #object .trees .tree:nth-child(42) {
+        left: 4144px;
+        top: 2860px;
+        z-index: 3160; }
+      #object .trees .tree:nth-child(43) {
+        left: 4494px;
+        top: 2844px;
+        z-index: 3144; }
+      #object .trees .tree li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 84px;
+        height: 84px; }
+        #object .trees .tree li:nth-child(1) {
+          left: 130px;
+          top: 20px; }
+        #object .trees .tree li:nth-child(2) {
+          left: 50px;
+          top: 120px; }
+        #object .trees .tree li:nth-child(3) {
+          left: 200px;
+          top: 140px; }
+      #object .trees .tree.apple > li {
+        background: url(../img/fruit.png) 50% 0/84px auto no-repeat; }
+      #object .trees .tree.blueberry > li {
+        background: url(../img/fruit.png) 50% -84px/84px auto no-repeat; }
+      #object .trees .tree.lemon > li {
+        background: url(../img/fruit.png) 50% -168px/84px auto no-repeat; }
+      #object .trees .tree.orange > li {
+        background: url(../img/fruit.png) 50% -252px/84px auto no-repeat; }
+      #object .trees .tree.peach > li {
+        background: url(../img/fruit.png) 50% -336px/84px auto no-repeat; }
+  #object .bridges {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    #object .bridges .lake {
+      position: absolute;
+      left: 2260px;
+      top: 4150px;
+      width: 1401px;
+      height: 844px; }
+      #object .bridges .lake .bridge {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1401px;
+        height: 844px;
+        background: url(../img/bridge.png) 0 0 no-repeat;
+        z-index: 1000; }
+      #object .bridges .lake .railing {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1401px;
+        height: 844px;
+        background: url(../img/bridge_railing.png) 0 0 no-repeat; }
+        #object .bridges .lake .railing:nth-of-type(2) {
+          top: -320px;
+          z-index: 4360;
+          background: url(../img/bridge_railing2.png) 0 0 no-repeat; }
+        #object .bridges .lake .railing:nth-of-type(3) {
+          top: -320px;
+          z-index: 4000; }
+        #object .bridges .lake .railing:nth-of-type(4) {
+          top: -40px;
+          z-index: 5000; }
+    #object .bridges .river {
+      position: absolute;
+      left: 1130px;
+      top: 1300px;
+      width: 376px;
+      height: 610px;
+      background: url(../img/bridge_r.png); }
+      #object .bridges .river.r1 {
+        z-index: 1300; }
+      #object .bridges .river.r2 {
+        left: 4870px;
+        top: 3450px;
+        z-index: 3450; }
+  #object .eggs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+    #object .eggs .goldenEgg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 48px;
+      height: 66px;
+      display: block;
+      outline: none;
+      border: none;
+      background: url(../img/egg.png) 50% 50%/48px 66px;
+      cursor: pointer;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+      #object .eggs .goldenEgg.disapear {
+        animation: disapear 1500ms 0s 1 forwards; }
+
+@keyframes disapear {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 211, 50, 0), 0 0 0 0 inset rgba(73, 62, 19, 0);
+    transform: scale(1); }
+  60% {
+    box-shadow: 0 0 30px 10px rgba(255, 211, 50, 0.76), 0 0 30px 10px inset rgba(255, 211, 50, 0.5);
+    transform: scale(1); }
+  90% {
+    box-shadow: 0 0 30px 3px rgba(255, 211, 50, 0.76), 0 0 30px 10px inset rgba(255, 211, 50, 0.5);
+    transform: scale(1); }
+  100% {
+    box-shadow: 0 0 30px 3px rgba(255, 211, 50, 0.76), 0 0 30px 10px inset rgba(255, 211, 50, 0.5);
+    transform: scale(0); } }
+
+#controller .eggPlate {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px; }
+  #controller .eggPlate li {
+    position: relative;
+    width: 20%;
+    height: 99px; }
+    #controller .eggPlate li:not(:first-child) .goldenEgg {
+      line-height: 40px; }
+    #controller .eggPlate li:nth-child(3) .goldenEgg {
+      line-height: 17px; }
+    #controller .eggPlate li .goldenEgg {
+      animation: eggAni 500ms 0s 1 forwards;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 72px;
+      height: 59px;
+      margin-left: -36px;
+      display: block;
+      outline: none;
+      border: none;
+      background: url(../img/egg.png) 50% 0 no-repeat;
+      cursor: pointer;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      text-align: center;
+      padding-top: 40px;
+      font-weight: bold;
+      transition: box-shadow 300ms; }
+      #controller .eggPlate li .goldenEgg:hover {
+        text-decoration: none;
+        box-shadow: 0 0 30px 10px rgba(255, 211, 50, 0.76), 0 0 30px 10px inset rgba(255, 211, 50, 0.5); }
+      #controller .eggPlate li .goldenEgg.blink {
+        position: relative;
+        animation: eggBlinkAni 500ms alternate infinite; }
+        #controller .eggPlate li .goldenEgg.blink:after {
+          content: "Open it!";
+          display: block;
+          width: 100px;
+          height: 50px;
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          background: url(../img/egg_bubble.png) 0 0 no-repeat;
+          text-align: center;
+          line-height: 60px;
+          font-size: 16px; }
+
+@keyframes eggAni {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(1); } }
+
+@keyframes eggBlinkAni {
+  from {
+    box-shadow: 0 0 30px 10px rgba(255, 211, 50, 0.76), 0 0 30px 10px inset rgba(255, 211, 50, 0.5); }
+  to {
+    box-shadow: 0 0 0 0 rgba(255, 211, 50, 0.76), 0 0 0 0 inset rgba(255, 211, 50, 0.5); } }
+
+#load {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6000;
+  background: white;
+  transition: background 1s; }
+  #load .cloud {
+    max-width: unset;
+    max-height: 150%;
+    display: block;
+    position: absolute;
+    transition: all 2000ms linear, opacity 1s 500ms linear; }
+    #load .cloud.c1 {
+      left: -23%;
+      top: -23%; }
+    #load .cloud.c2 {
+      left: 23%;
+      top: -23%; }
+    #load .cloud.c3 {
+      left: -23%;
+      top: 23%; }
+    #load .cloud.c4 {
+      left: 23%;
+      top: 23%; }
+  #load > span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -17.5px 0 0 -50px;
+    width: 100px;
+    height: 70px;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    color: #707070;
+    transition: opacity 1s 500ms linear; }
+    #load > span svg {
+      width: 32px;
+      height: 32px; }
+      #load > span svg circle {
+        stroke-dasharray: 35 55;
+        stroke-dashoffset: 0;
+        animation: circleAni 1500ms linear infinite; }
+
+@keyframes circleAni {
+  0% {
+    stroke-dashoffset: 90; }
+  100% {
+    stroke-dashoffset: 0; } }
+    #load > span.on {
+      opacity: 0; }
+  #load .before_start {
+    opacity: 0;
+    display: block;
+    position: absolute;
+    left: 10vw;
+    top: 10vh;
+    z-index: 1;
+    width: 80vw;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.85);
+    transition: opacity 1s linear; }
+    #load .before_start h1 {
+      width: 70%;
+      height: 50%;
+      margin: 0 auto; }
+      #load .before_start h1 svg {
+        padding-top: 10%;
+        width: 100%; }
+
+@keyframes h1svg1 {
+  from {
+    stroke-dasharray: 438;
+    stroke-dashoffset: 438; }
+  to {
+    stroke-dasharray: 438;
+    stroke-dashoffset: 0; } }
+
+@keyframes h1svg2 {
+  from {
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260; }
+  to {
+    stroke-dasharray: 260;
+    stroke-dashoffset: 0; } }
+
+@keyframes h1svg3 {
+  from {
+    stroke-dasharray: 173;
+    stroke-dashoffset: 173; }
+  to {
+    stroke-dasharray: 173;
+    stroke-dashoffset: 0; } }
+
+@keyframes h1svg4 {
+  from {
+    stroke-dasharray: 628;
+    stroke-dashoffset: 628; }
+  to {
+    stroke-dasharray: 628;
+    stroke-dashoffset: 0; } }
+
+@keyframes h1svg5 {
+  from {
+    stroke-dasharray: 2008;
+    stroke-dashoffset: 2008; }
+  to {
+    stroke-dasharray: 2008;
+    stroke-dashoffset: 0; } }
+
+@keyframes h1svg6 {
+  from {
+    stroke-dasharray: 36;
+    stroke-dashoffset: 36; }
+  to {
+    stroke-dasharray: 36;
+    stroke-dashoffset: 0; } }
+    #load .before_start ul {
+      display: flex;
+      width: 100%;
+      height: 50%;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center; }
+      #load .before_start ul li {
+        width: 50%; }
+        #load .before_start ul li button {
+          position: relative;
+          display: block;
+          width: 140px;
+          height: 200px;
+          margin: 0 auto;
+          cursor: pointer;
+          background: url(../img/character.png) 0 -200px no-repeat;
+          border: none;
+          outline: none;
+          border-radius: 10px; }
+          #load .before_start ul li button span {
+            position: absolute;
+            display: block;
+            bottom: -50px;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            text-indent: 10px; }
+          #load .before_start ul li button:hover {
+            animation: frontAni 1000ms 0s infinite step-start; }
+          #load .before_start ul li button.cheat {
+            width: 150px;
+            height: 150px;
+            margin-top: 40px;
+            background: url(../img/goose.png) 0 0 no-repeat; }
+            #load .before_start ul li button.cheat span {
+              text-indent: 0; }
+          #load .before_start ul li button.cheat:hover {
+            animation: goosefrontAni 1s infinite step-start; }
+          #load .before_start ul li button::after {
+            position: absolute;
+            top: -30px;
+            right: -80px;
+            display: block;
+            width: 160px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px solid #000;
+            border-radius: 10px;
+            transform-origin: 90% bottom;
+            transform: scale(0) rotate(0);
+            transition: 300ms; }
+          #load .before_start ul li button:hover::after {
+            transform: scale(1) rotate(10deg); }
+          #load .before_start ul li button.start::after {
+            line-height: 36px;
+            content: "처음이라면 클릭하세요!"; }
+          #load .before_start ul li button.cheat::after {
+            content: "작업물을 빠르게 확인하고 싶다면 클릭하세요"; }
+    #load .before_start.on {
+      opacity: 1;
+      z-index: 1; }
+      #load .before_start.on h1 svg g:nth-of-type(1) {
+        animation: h1svg1 linear 300ms 500ms forwards;
+        stroke-dasharray: 438;
+        stroke-dashoffset: 438; }
+      #load .before_start.on h1 svg g:nth-of-type(2) {
+        animation: h1svg2 linear 200ms 800ms forwards;
+        stroke-dasharray: 260;
+        stroke-dashoffset: 260; }
+      #load .before_start.on h1 svg g:nth-of-type(3) {
+        animation: h1svg3 linear 100ms 1000ms forwards;
+        stroke-dasharray: 173;
+        stroke-dashoffset: 173; }
+      #load .before_start.on h1 svg g:nth-of-type(4) {
+        animation: h1svg4 linear 500ms 1100ms forwards;
+        stroke-dasharray: 628;
+        stroke-dashoffset: 628; }
+      #load .before_start.on h1 svg g:nth-of-type(5) {
+        animation: h1svg5 linear 1600ms 1600ms forwards;
+        stroke-dasharray: 2008;
+        stroke-dashoffset: 2008; }
+      #load .before_start.on h1 svg g:nth-of-type(6) {
+        animation: h1svg6 linear 150ms 3200ms forwards;
+        stroke-dasharray: 36;
+        stroke-dashoffset: 36; }
+    #load .before_start.off {
+      z-index: -1; }
+  #load.load {
+    background: rgba(255, 255, 255, 0);
+    animation: zIndex 0s 3s forwards; }
+
+@keyframes zIndex {
+  from {
+    z-index: 6000; }
+  to {
+    z-index: -1; } }
+    #load.load .cloud {
+      opacity: 0; }
+      #load.load .cloud.c1 {
+        left: -225%;
+        top: -225%; }
+      #load.load .cloud.c2 {
+        left: 225%;
+        top: -225%; }
+      #load.load .cloud.c3 {
+        left: -225%;
+        top: 225%; }
+      #load.load .cloud.c4 {
+        left: 225%;
+        top: 225%; }
+
+.explain {
+  opacity: 1;
+  z-index: -1;
+  display: block;
+  position: absolute;
+  left: 10vw;
+  top: 10vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  width: 80vw;
+  height: 80vh;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.85);
+  transition: opacity 1s linear, left 500ms; }
+  .explain h3 {
+    font-size: 40px;
+    width: 100%;
+    height: 30px;
+    text-align: center; }
+  .explain > p {
+    font-size: 16px;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center; }
+  .explain > section {
+    position: absolute;
+    width: 50%;
+    padding: 5vh;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 24px; }
+    .explain > section.ex-mt {
+      margin-left: 45%; }
+    .explain > section .pc {
+      margin-top: 10px; }
+    .explain > section .smallerimg {
+      width: auto;
+      height: 60px; }
+    .explain > section figure {
+      margin-top: 25px;
+      line-height: 70px; }
+      .explain > section figure figcaption {
+        padding-bottom: 5px;
+        line-height: 1.5; }
+      .explain > section figure:first-of-type img {
+        width: 150px;
+        height: auto; }
+      .explain > section figure:nth-of-type(2) img {
+        width: auto;
+        height: 50px; }
+    .explain > section .close {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      right: 3%;
+      top: 0;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 50px;
+      font-family: inherit; }
+  .explain.on {
+    z-index: 3000; }
+  .explain .close {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    font-family: inherit; }
+
+@keyframes load1Ani {
+  0% {
+    transform: scale(0.01); }
+  30% {
+    transform: scale(0.01); } }
+
+@keyframes load2Ani {
+  0% {
+    transform: scale(0.02); }
+  30% {
+    transform: scale(0.02); } }
+
+@keyframes load3Ani {
+  0% {
+    transform: scale(0.03); }
+  30% {
+    transform: scale(0.03); } }
+
+@keyframes load4Ani {
+  0% {
+    transform: scale(0.04); }
+  30% {
+    transform: scale(0.04); } }
+
+@keyframes load5Ani {
+  0% {
+    transform: scale(0.05); }
+  30% {
+    transform: scale(0.05); } }
+
+@keyframes load6Ani {
+  0% {
+    transform: scale(0.06); }
+  30% {
+    transform: scale(0.06); } }
+
+@keyframes load7Ani {
+  0% {
+    transform: scale(0.07); }
+  30% {
+    transform: scale(0.07); } }
+
+@keyframes load8Ani {
+  0% {
+    transform: scale(0.08); }
+  30% {
+    transform: scale(0.08); } }
+
+@keyframes load9Ani {
+  0% {
+    transform: scale(0.09); }
+  30% {
+    transform: scale(0.09); } }
+
+@keyframes load10Ani {
+  0% {
+    transform: scale(0.1); }
+  30% {
+    transform: scale(0.1); } }
+
+@keyframes load11Ani {
+  0% {
+    transform: scale(0.11); }
+  30% {
+    transform: scale(0.11); } }
+
+@keyframes load12Ani {
+  0% {
+    transform: scale(0.12); }
+  30% {
+    transform: scale(0.12); } }
+
+@keyframes load13Ani {
+  0% {
+    transform: scale(0.13); }
+  30% {
+    transform: scale(0.13); } }
+
+@keyframes load14Ani {
+  0% {
+    transform: scale(0.14); }
+  30% {
+    transform: scale(0.14); } }
+
+@keyframes load15Ani {
+  0% {
+    transform: scale(0.15); }
+  30% {
+    transform: scale(0.15); } }
+
+@keyframes load16Ani {
+  0% {
+    transform: scale(0.16); }
+  30% {
+    transform: scale(0.16); } }
+
+@keyframes load17Ani {
+  0% {
+    transform: scale(0.17); }
+  30% {
+    transform: scale(0.17); } }
+
+@keyframes load18Ani {
+  0% {
+    transform: scale(0.18); }
+  30% {
+    transform: scale(0.18); } }
+
+@keyframes load19Ani {
+  0% {
+    transform: scale(0.19); }
+  30% {
+    transform: scale(0.19); } }
+
+@keyframes load20Ani {
+  0% {
+    transform: scale(0.2); }
+  30% {
+    transform: scale(0.2); } }
+
+@keyframes load21Ani {
+  0% {
+    transform: scale(0.21); }
+  30% {
+    transform: scale(0.21); } }
+
+@keyframes load22Ani {
+  0% {
+    transform: scale(0.22); }
+  30% {
+    transform: scale(0.22); } }
+
+@keyframes load23Ani {
+  0% {
+    transform: scale(0.23); }
+  30% {
+    transform: scale(0.23); } }
+
+@keyframes load24Ani {
+  0% {
+    transform: scale(0.24); }
+  30% {
+    transform: scale(0.24); } }
+
+@keyframes load25Ani {
+  0% {
+    transform: scale(0.25); }
+  30% {
+    transform: scale(0.25); } }
+
+@keyframes load26Ani {
+  0% {
+    transform: scale(0.26); }
+  30% {
+    transform: scale(0.26); } }
+
+@keyframes load27Ani {
+  0% {
+    transform: scale(0.27); }
+  30% {
+    transform: scale(0.27); } }
+
+@keyframes load28Ani {
+  0% {
+    transform: scale(0.28); }
+  30% {
+    transform: scale(0.28); } }
+
+@keyframes load29Ani {
+  0% {
+    transform: scale(0.29); }
+  30% {
+    transform: scale(0.29); } }
+
+@keyframes load30Ani {
+  0% {
+    transform: scale(0.3); }
+  30% {
+    transform: scale(0.3); } }
+
+@keyframes load31Ani {
+  0% {
+    transform: scale(0.31); }
+  30% {
+    transform: scale(0.31); } }
+
+@keyframes load32Ani {
+  0% {
+    transform: scale(0.32); }
+  30% {
+    transform: scale(0.32); } }
+
+@keyframes load33Ani {
+  0% {
+    transform: scale(0.33); }
+  30% {
+    transform: scale(0.33); } }
+
+@keyframes load34Ani {
+  0% {
+    transform: scale(0.34); }
+  30% {
+    transform: scale(0.34); } }
+
+@keyframes load35Ani {
+  0% {
+    transform: scale(0.35); }
+  30% {
+    transform: scale(0.35); } }
+
+@keyframes load36Ani {
+  0% {
+    transform: scale(0.36); }
+  30% {
+    transform: scale(0.36); } }
+
+@keyframes load37Ani {
+  0% {
+    transform: scale(0.37); }
+  30% {
+    transform: scale(0.37); } }
+
+@keyframes load38Ani {
+  0% {
+    transform: scale(0.38); }
+  30% {
+    transform: scale(0.38); } }
+
+@keyframes load39Ani {
+  0% {
+    transform: scale(0.39); }
+  30% {
+    transform: scale(0.39); } }
+
+@keyframes load40Ani {
+  0% {
+    transform: scale(0.4); }
+  30% {
+    transform: scale(0.4); } }
+
+@keyframes load41Ani {
+  0% {
+    transform: scale(0.41); }
+  30% {
+    transform: scale(0.41); } }
+
+@keyframes load42Ani {
+  0% {
+    transform: scale(0.42); }
+  30% {
+    transform: scale(0.42); } }
+
+@keyframes load43Ani {
+  0% {
+    transform: scale(0.43); }
+  30% {
+    transform: scale(0.43); } }
+
+@keyframes load44Ani {
+  0% {
+    transform: scale(0.44); }
+  30% {
+    transform: scale(0.44); } }
+
+@keyframes load45Ani {
+  0% {
+    transform: scale(0.45); }
+  30% {
+    transform: scale(0.45); } }
+
+@keyframes load46Ani {
+  0% {
+    transform: scale(0.46); }
+  30% {
+    transform: scale(0.46); } }
+
+@keyframes load47Ani {
+  0% {
+    transform: scale(0.47); }
+  30% {
+    transform: scale(0.47); } }
+
+@keyframes load48Ani {
+  0% {
+    transform: scale(0.48); }
+  30% {
+    transform: scale(0.48); } }
+
+@keyframes load49Ani {
+  0% {
+    transform: scale(0.49); }
+  30% {
+    transform: scale(0.49); } }
+
+@keyframes load50Ani {
+  0% {
+    transform: scale(0.5); }
+  30% {
+    transform: scale(0.5); } }
+
+@keyframes load51Ani {
+  0% {
+    transform: scale(0.51); }
+  30% {
+    transform: scale(0.51); } }
+
+@keyframes load52Ani {
+  0% {
+    transform: scale(0.52); }
+  30% {
+    transform: scale(0.52); } }
+
+@keyframes load53Ani {
+  0% {
+    transform: scale(0.53); }
+  30% {
+    transform: scale(0.53); } }
+
+@keyframes load54Ani {
+  0% {
+    transform: scale(0.54); }
+  30% {
+    transform: scale(0.54); } }
+
+@keyframes load55Ani {
+  0% {
+    transform: scale(0.55); }
+  30% {
+    transform: scale(0.55); } }
+
+@keyframes load56Ani {
+  0% {
+    transform: scale(0.56); }
+  30% {
+    transform: scale(0.56); } }
+
+@keyframes load57Ani {
+  0% {
+    transform: scale(0.57); }
+  30% {
+    transform: scale(0.57); } }
+
+@keyframes load58Ani {
+  0% {
+    transform: scale(0.58); }
+  30% {
+    transform: scale(0.58); } }
+
+@keyframes load59Ani {
+  0% {
+    transform: scale(0.59); }
+  30% {
+    transform: scale(0.59); } }
+
+@keyframes load60Ani {
+  0% {
+    transform: scale(0.6); }
+  30% {
+    transform: scale(0.6); } }
+
+@keyframes load61Ani {
+  0% {
+    transform: scale(0.61); }
+  30% {
+    transform: scale(0.61); } }
+
+@keyframes load62Ani {
+  0% {
+    transform: scale(0.62); }
+  30% {
+    transform: scale(0.62); } }
+
+@keyframes load63Ani {
+  0% {
+    transform: scale(0.63); }
+  30% {
+    transform: scale(0.63); } }
+
+@keyframes load64Ani {
+  0% {
+    transform: scale(0.64); }
+  30% {
+    transform: scale(0.64); } }
+
+@keyframes load65Ani {
+  0% {
+    transform: scale(0.65); }
+  30% {
+    transform: scale(0.65); } }
+
+@keyframes load66Ani {
+  0% {
+    transform: scale(0.66); }
+  30% {
+    transform: scale(0.66); } }
+
+@keyframes load67Ani {
+  0% {
+    transform: scale(0.67); }
+  30% {
+    transform: scale(0.67); } }
+
+@keyframes load68Ani {
+  0% {
+    transform: scale(0.68); }
+  30% {
+    transform: scale(0.68); } }
+
+@keyframes load69Ani {
+  0% {
+    transform: scale(0.69); }
+  30% {
+    transform: scale(0.69); } }
+
+@keyframes load70Ani {
+  0% {
+    transform: scale(0.7); }
+  30% {
+    transform: scale(0.7); } }
+
+@keyframes load71Ani {
+  0% {
+    transform: scale(0.71); }
+  30% {
+    transform: scale(0.71); } }
+
+@keyframes load72Ani {
+  0% {
+    transform: scale(0.72); }
+  30% {
+    transform: scale(0.72); } }
+
+@keyframes load73Ani {
+  0% {
+    transform: scale(0.73); }
+  30% {
+    transform: scale(0.73); } }
+
+@keyframes load74Ani {
+  0% {
+    transform: scale(0.74); }
+  30% {
+    transform: scale(0.74); } }
+
+@keyframes load75Ani {
+  0% {
+    transform: scale(0.75); }
+  30% {
+    transform: scale(0.75); } }
+
+@keyframes load76Ani {
+  0% {
+    transform: scale(0.76); }
+  30% {
+    transform: scale(0.76); } }
+
+@keyframes load77Ani {
+  0% {
+    transform: scale(0.77); }
+  30% {
+    transform: scale(0.77); } }
+
+@keyframes load78Ani {
+  0% {
+    transform: scale(0.78); }
+  30% {
+    transform: scale(0.78); } }
+
+@keyframes load79Ani {
+  0% {
+    transform: scale(0.79); }
+  30% {
+    transform: scale(0.79); } }
+
+@keyframes load80Ani {
+  0% {
+    transform: scale(0.8); }
+  30% {
+    transform: scale(0.8); } }
+
+@keyframes load81Ani {
+  0% {
+    transform: scale(0.81); }
+  30% {
+    transform: scale(0.81); } }
+
+@keyframes load82Ani {
+  0% {
+    transform: scale(0.82); }
+  30% {
+    transform: scale(0.82); } }
+
+@keyframes load83Ani {
+  0% {
+    transform: scale(0.83); }
+  30% {
+    transform: scale(0.83); } }
+
+@keyframes load84Ani {
+  0% {
+    transform: scale(0.84); }
+  30% {
+    transform: scale(0.84); } }
+
+@keyframes load85Ani {
+  0% {
+    transform: scale(0.85); }
+  30% {
+    transform: scale(0.85); } }
+
+@keyframes load86Ani {
+  0% {
+    transform: scale(0.86); }
+  30% {
+    transform: scale(0.86); } }
+
+@keyframes load87Ani {
+  0% {
+    transform: scale(0.87); }
+  30% {
+    transform: scale(0.87); } }
+
+@keyframes load88Ani {
+  0% {
+    transform: scale(0.88); }
+  30% {
+    transform: scale(0.88); } }
+
+@keyframes load89Ani {
+  0% {
+    transform: scale(0.89); }
+  30% {
+    transform: scale(0.89); } }
+
+@keyframes load90Ani {
+  0% {
+    transform: scale(0.9); }
+  30% {
+    transform: scale(0.9); } }
+
+@keyframes load91Ani {
+  0% {
+    transform: scale(0.91); }
+  30% {
+    transform: scale(0.91); } }
+
+@keyframes load92Ani {
+  0% {
+    transform: scale(0.92); }
+  30% {
+    transform: scale(0.92); } }
+
+@keyframes load93Ani {
+  0% {
+    transform: scale(0.93); }
+  30% {
+    transform: scale(0.93); } }
+
+@keyframes load94Ani {
+  0% {
+    transform: scale(0.94); }
+  30% {
+    transform: scale(0.94); } }
+
+@keyframes load95Ani {
+  0% {
+    transform: scale(0.95); }
+  30% {
+    transform: scale(0.95); } }
+
+@keyframes load96Ani {
+  0% {
+    transform: scale(0.96); }
+  30% {
+    transform: scale(0.96); } }
+
+@keyframes load97Ani {
+  0% {
+    transform: scale(0.97); }
+  30% {
+    transform: scale(0.97); } }
+
+@keyframes load98Ani {
+  0% {
+    transform: scale(0.98); }
+  30% {
+    transform: scale(0.98); } }
+
+@keyframes load99Ani {
+  0% {
+    transform: scale(0.99); }
+  30% {
+    transform: scale(0.99); } }
+
+.ending {
+  opacity: 0;
+  z-index: -1;
+  display: block;
+  transition: opacity 1s 2s;
+  position: absolute;
+  left: 10vw;
+  top: 10vh;
+  z-index: 1;
+  overflow: hidden;
+  width: 80vw;
+  height: 80vh;
+  background: #fffe;
+  box-shadow: 0 0 30px 30px #fffe;
+  text-align: center; }
+  .ending > section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5vw;
+    box-sizing: border-box;
+    transition: opacity 1s linear, left 500ms; }
+    .ending > section.profile {
+      left: 0;
+      top: 0; }
+    .ending > section.contect {
+      left: 100%;
+      top: 0; }
+    .ending > section .close {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      right: 3%;
+      top: 3%;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 50px;
+      font-family: inherit; }
+  .ending.p .profile {
+    left: 0;
+    top: 0; }
+  .ending.p .contect {
+    left: 100%;
+    top: 0; }
+  .ending.c .profile {
+    left: -100%;
+    top: 0; }
+  .ending.c .contect {
+    left: 0;
+    top: 0; }
+  .ending .profile h2 {
+    float: left;
+    width: 30%;
+    height: 100%; }
+    .ending .profile h2 figure {
+      overflow: hidden;
+      width: 22vh;
+      height: 22vh;
+      margin: 2vh auto;
+      border-radius: 50%; }
+    .ending .profile h2 ul {
+      padding-top: 20px; }
+      .ending .profile h2 ul li {
+        font-size: 20px;
+        line-height: 2; }
+  .ending .profile h3 {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 70%;
+    height: 50px;
+    margin: calc(7vh - 25px) 0; }
+    .ending .profile h3 ul {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 70%;
+      height: 100%;
+      font-size: 24px;
+      animation: h3Ani 20s infinite linear; }
+      .ending .profile h3 ul li {
+        height: 50px;
+        line-height: 50px; }
+    .ending .profile h3 p {
+      float: left;
+      width: 100%;
+      height: 100%;
+      padding-left: 70%;
+      line-height: 50px;
+      box-sizing: border-box;
+      font-size: 24px;
+      text-align: left; }
+
+@keyframes h3Ani {
+  0% {
+    top: 0px; }
+  4.999% {
+    top: -250px; }
+  5% {
+    top: 0; }
+  9% {
+    top: -200px; }
+  20% {
+    top: -200px; }
+  20.999% {
+    top: -250px; }
+  21% {
+    top: 0; }
+  25.999% {
+    top: -250px; }
+  26% {
+    top: 0; }
+  29% {
+    top: -150px; }
+  40% {
+    top: -150px; }
+  41.999% {
+    top: -250px; }
+  42% {
+    top: 0; }
+  46.999% {
+    top: -250px; }
+  47% {
+    top: 0; }
+  49% {
+    top: -100px; }
+  60% {
+    top: -100px; }
+  62.999% {
+    top: -250px; }
+  63% {
+    top: 0; }
+  67.999% {
+    top: -300px; }
+  68% {
+    top: 0; }
+  69% {
+    top: -50px; }
+  80% {
+    top: -50px; }
+  83.999% {
+    top: -250px; }
+  84% {
+    top: 0; }
+  88.999% {
+    top: -250px; }
+  89% {
+    top: 0; }
+  100% {
+    top: 0; } }
+  .ending .profile .skill {
+    float: left;
+    width: 70%;
+    height: 80%; }
+    .ending .profile .skill > ul {
+      width: 100%;
+      height: 80%; }
+      .ending .profile .skill > ul > li {
+        float: left;
+        width: 50%;
+        height: calc(100% / 3); }
+        .ending .profile .skill > ul > li h4 {
+          font-size: 24px;
+          line-height: 50px; }
+        .ending .profile .skill > ul > li .graph {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          width: 80%;
+          height: 20px;
+          margin: 0 auto;
+          border: 2px solid #000;
+          background: #fff;
+          font-size: 0;
+          text-indent: -9999px; }
+          .ending .profile .skill > ul > li .graph .status {
+            display: block;
+            position: absolute;
+            width: 0%;
+            height: 20px; }
+        .ending .profile .skill > ul > li:nth-child(1) .status {
+          background: #ccd9e9;
+          box-shadow: 0 0 20px 20px #ccd9e9; }
+        .ending .profile .skill > ul > li:nth-child(2) .status {
+          background: #95a6c4;
+          box-shadow: 0 0 20px 20px #95a6c4; }
+        .ending .profile .skill > ul > li:nth-child(3) .status {
+          background: #91677d;
+          box-shadow: 0 0 20px 20px #91677d; }
+        .ending .profile .skill > ul > li:nth-child(4) .status {
+          background: #e65d6d;
+          box-shadow: 0 0 20px 20px #e65d6d; }
+        .ending .profile .skill > ul > li:nth-child(5) .status {
+          background: #ff9f96;
+          box-shadow: 0 0 20px 20px #ff9f96; }
+        .ending .profile .skill > ul > li:nth-child(6) .status {
+          background: #ffdab5;
+          box-shadow: 0 0 20px 20px #ffdab5; }
+    .ending .profile .skill .else {
+      font-size: 20px;
+      word-spacing: 10px; }
+  .ending .profile .next {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 70px;
+    position: absolute;
+    right: 0;
+    top: calc(50% - 35px);
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 50px; }
+  .ending .contect h3 {
+    height: 20vh;
+    padding-top: 10vh;
+    line-height: 20vh;
+    font-size: 50px; }
+  .ending .contect p {
+    height: 40%;
+    font-size: 30px; }
+  .ending .contect .emoji_list {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .ending .contect .emoji_list li {
+      width: calc(100% / 5); }
+    .ending .contect .emoji_list button {
+      transform-origin: center center;
+      transform: scale(0.7);
+      outline: none; }
+    .ending .contect .emoji_list button.emoji_like .emoji_hand {
+      animation: hands-up 2s linear infinite; }
+      .ending .contect .emoji_list button.emoji_like .emoji_hand .emoji_thumb {
+        animation: thumbs-up 2s linear infinite; }
+    .ending .contect .emoji_list button.emoji_love .emoji_heart {
+      animation: heart-beat 2s linear infinite alternate; }
+    .ending .contect .emoji_list button.emoji_haha .emoji_face {
+      animation: haha-face 2s linear infinite; }
+    .ending .contect .emoji_list button.emoji_haha .emoji_mouth {
+      animation: haha-mouth 2s linear infinite; }
+    .ending .contect .emoji_list button.emoji_yay .emoji_face {
+      animation: yay-face 1s linear infinite alternate; }
+    .ending .contect .emoji_list button.emoji_wow .emoji_face {
+      animation: wow-face 3s linear infinite; }
+    .ending .contect .emoji_list button:hover.emoji_wow .emoji_eyebrows {
+      animation: wow-brow 3s linear infinite; }
+    .ending .contect .emoji_list button:hover.emoji_wow .emoji_tougue {
+      animation: wow-tongue 3s infinite linear; }
+    .ending .contect .emoji_list button:hover.emoji_sad .emoji_face {
+      animation: sad-face 2s ease-in infinite; }
+    .ending .contect .emoji_list button:hover.emoji_sad .emoji_eyes:after {
+      animation: tear-drop 2s ease-in infinite; }
+    .ending .contect .emoji_list button:hover.emoji_sad .emoji_mouth {
+      animation: sad-mouth 2s ease-in infinite; }
+    .ending .contect .emoji_list button:hover.emoji_angry {
+      animation: angry 2s ease-in infinite; }
+      .ending .contect .emoji_list button:hover.emoji_angry .emoji_face {
+        animation: angry-face 2s ease-in infinite; }
+      .ending .contect .emoji_list button:hover.emoji_angry .emoji_mouth {
+        animation: angry-mouth 2s ease-in infinite; }
+  .ending .contect .prev {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 35px);
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 50px; }
+  .ending.on {
+    opacity: 1;
+    z-index: 9000; }
+    .ending.on .status {
+      animation: statusAni 2200ms 2000ms 1 linear; }
+
+@keyframes statusAni {
+  0% {
+    width: 100%; }
+  50% {
+    width: 0%; } }
+
+.emoji_list {
+  /* 1. like */
+  /* love */
+  /* haha */
+  /* yay */
+  /* wow */ }
+  .emoji_list .emoji {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 15px 15px 40px;
+    border-radius: 50%;
+    border: none;
+    background: #ffda6a; }
+  .emoji_list .emoji:after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 30px);
+    width: 60px;
+    font-size: 18px;
+    color: #8a8a8a; }
+  .emoji_list .emoji_like {
+    background-color: #548dff; }
+  .emoji_list .emoji_like:after {
+    content: "Like"; }
+  .emoji_list .emoji_like .emoji_hand {
+    position: absolute;
+    left: 25px;
+    bottom: 30px;
+    z-index: 0;
+    width: 20px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px; }
+
+@keyframes hands-up {
+  25% {
+    transform: rotate(15deg); }
+  50% {
+    transform: rotate(-15deg) translateY(-10px); }
+  75%, 100% {
+    transform: rotate(0deg); } }
+  .emoji_list .emoji_like .emoji_hand:before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    bottom: 5px;
+    width: 40px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 2px 10px 10px 2px;
+    box-shadow: 1px -9px 0 1px #fff,2px -19px 0 2px #fff, 3px -29px 0 3px #fff; }
+  .emoji_list .emoji_like .emoji_hand .emoji_thumb {
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    z-index: 2;
+    border-bottom: 20px solid #fff;
+    border-left: 20px solid transparent;
+    transform: rotate(5deg);
+    transform-origin: 0 100%; }
+
+@keyframes thumbs-up {
+  25% {
+    transform: rotate(20deg); }
+  50%, 100% {
+    transform: rotate(5deg); } }
+  .emoji_list .emoji_like .emoji_hand .emoji_thumb:before {
+    content: "";
+    position: absolute;
+    left: -9.7px;
+    top: -9px;
+    width: 10px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50% 50% 0 0;
+    box-shadow: -1px 4px 0 -1px #fff;
+    transform: rotate(-14deg);
+    transform-origin: 100% 100%; }
+  .emoji_list .emoji_love {
+    background-color: #f55064; }
+  .emoji_list .emoji_love:after {
+    content: "Love"; }
+  .emoji_list .emoji_love .emoji_heart {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px; }
+
+@keyframes heart-beat {
+  20% {
+    transform: scale(1.1); }
+  75% {
+    transform: scale(0.6); } }
+  .emoji_list .emoji_love .emoji_heart:before, .emoji_list .emoji_love .emoji_heart:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 64px;
+    margin-left: -20px;
+    margin-top: -32px;
+    background-color: #fff;
+    border-radius: 20px 20px 0 0; }
+  .emoji_list .emoji_love .emoji_heart:before {
+    transform: translate(20px) rotate(-45deg);
+    transform-origin: 0% 100%; }
+  .emoji_list .emoji_love .emoji_heart:after {
+    transform: translate(-20px) rotate(45deg);
+    transform-origin: 100% 100%; }
+  .emoji_list .emoji_haha:after {
+    content: "Haha"; }
+  .emoji_list .emoji_haha .emoji_face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit; }
+
+@keyframes haha-face {
+  10% {
+    transform: translateY(25px); }
+  20% {
+    transform: translateY(15px); }
+  30% {
+    transform: translateY(25px); }
+  40% {
+    transform: translateY(15px); }
+  50% {
+    transform: translateY(25px); }
+  60% {
+    transform: translateY(0); }
+  70% {
+    transform: translateY(-10px); }
+  80% {
+    transform: translateY(0); }
+  90% {
+    transform: translateY(-10px); } }
+  .emoji_list .emoji_haha .emoji_eyes {
+    position: absolute;
+    left: 50%;
+    top: 35px;
+    width: 26px;
+    height: 6px;
+    margin-left: -13px;
+    border-radius: 2px;
+    box-shadow: -25px 5px 0 0 #000, 25px -5px 0 0 #000;
+    transform: rotate(20deg); }
+  .emoji_list .emoji_haha .emoji_eyes:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 6px;
+    border-radius: 2px;
+    box-shadow: -25px -5px 0 0 #000, 25px 5px 0 0 #000;
+    transform: rotate(-40deg); }
+  .emoji_list .emoji_haha .emoji_mouth {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    height: 40px;
+    margin-left: -40px;
+    background-color: #000;
+    border-radius: 0 0 40px 40px;
+    overflow: hidden; }
+
+@keyframes haha-mouth {
+  10% {
+    transform: scale(0.6);
+    top: 45%; }
+  20% {
+    transform: scale(0.8);
+    top: 45%; }
+  30% {
+    transform: scale(0.6);
+    top: 45%; }
+  40% {
+    transform: scale(0.8);
+    top: 45%; }
+  50% {
+    transform: scale(0.6);
+    top: 45%; }
+  60% {
+    transform: scale(1);
+    top: 50%; }
+  70% {
+    transform: scale(1.2);
+    top: 50%; }
+  80% {
+    transform: scale(1);
+    top: 50%; }
+  90% {
+    transform: scale(1.2);
+    top: 50%; } }
+  .emoji_list .emoji_haha .emoji_tougue {
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 70px;
+    height: 30px;
+    margin-left: -35px;
+    border-radius: 50%;
+    background-color: #f55064; }
+  .emoji_list .emoji_yay:after {
+    content: "Yay"; }
+  .emoji_list .emoji_yay .emoji_face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit; }
+
+@keyframes yay-face {
+  25% {
+    transform: rotate(15deg); }
+  75% {
+    transform: rotate(-15deg); } }
+  .emoji_list .emoji_yay .emoji_eyebrows {
+    position: absolute;
+    left: calc(50% - 3px);
+    top: 30px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: -6px 0 0 0 #000,-36px 0 0 0 #000,6px 0 0 0 #000,36px 0 0 0 #000; }
+  .emoji_list .emoji_yay .emoji_eyebrows:before, .emoji_list .emoji_yay .emoji_eyebrows:after {
+    content: "";
+    position: absolute;
+    left: calc(50% - 18px);
+    bottom: 3px;
+    width: 36px;
+    height: 18px;
+    border-radius: 60px 60px 0 0;
+    border: 6px solid #000;
+    border-bottom: none;
+    box-sizing: border-box; }
+  .emoji_list .emoji_yay .emoji_eyebrows:before {
+    margin-left: -21px; }
+  .emoji_list .emoji_yay .emoji_eyebrows:after {
+    margin-left: 21px; }
+  .emoji_list .emoji_yay .emoji_mouth {
+    position: absolute;
+    left: calc(50% - 3px);
+    top: 60px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: -25px 0 0 0 #000, 25px 0 0 0 #000, -35px -2px 30px 10px #d5234c, 35px -2px 30px 10px #d5234c; }
+  .emoji_list .emoji_yay .emoji_mouth:after {
+    content: "";
+    position: absolute;
+    left: calc(50% - 40px);
+    top: -64px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: transparent;
+    border-radius: 50%;
+    border: 6px solid #000;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    box-sizing: border-box; }
+  .emoji_list .emoji_wow:after {
+    content: "Wow"; }
+  .emoji_list .emoji_wow .emoji_face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit; }
+
+@keyframes wow-face {
+  15%, 25% {
+    transform: rotate(20deg) translateX(-25px); }
+  45%, 65% {
+    transform: rotate(-20deg) translateX(25px); }
+  75%, 100% {
+    transform: rotate(0) translateX(0); } }
+  .emoji_list .emoji_wow .emoji_eyebrows {
+    position: absolute;
+    left: calc(50% - 3px);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: -18px 0 0 0 #000, -33px 0 0 0 #000, 18px 0 0 0 #000, 33px 0 0 0 #000; }
+
+@keyframes wow-brow {
+  15%, 65% {
+    top: 25px; }
+  0%, 75%, 100% {
+    top: 15px; } }
+  .emoji_list .emoji_wow .emoji_eyebrows:before, .emoji_list .emoji_wow .emoji_eyebrows:after {
+    content: "";
+    position: absolute;
+    left: calc(50% - 12px);
+    top: -3px;
+    width: 24px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 6px solid #000;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent; }
+  .emoji_list .emoji_wow .emoji_eyebrows:before {
+    margin-left: -25px; }
+  .emoji_list .emoji_wow .emoji_eyebrows:after {
+    margin-left: 25px; }
+  .emoji_list .emoji_wow .emoji_eyes {
+    position: absolute;
+    left: calc(50% - 8px);
+    top: 35px;
+    width: 16px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 25px 0 0 0 #000, -25px 0 0 0 #000; }
+  .emoji_list .emoji_wow .emoji_tougue {
+    position: absolute;
+    left: calc(50% - 15px);
+    top: 50%;
+    width: 30px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #000; }
+
+@keyframes wow-tongue {
+  10%, 30% {
+    width: 20px;
+    height: 20px;
+    left: calc(50% - 10px); }
+  50%, 70% {
+    width: 30px;
+    height: 40px;
+    left: calc(50% - 15px); }
+  75%, 100% {
+    height: 50px; } }
+
+@font-face {
+  font-family: 'CookieRun-Regular';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+body, html {
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
+
+body {
+  position: relative;
+  font-family: "CookieRun-Regular"; }
+
+body * {
+  font-family: inherit; }
+
+body > p {
+  display: none; }
+
+#field {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6000px;
+  height: 5000px;
+  transform-origin: 0 0;
+  transition: 1s;
+  z-index: 1;
+  transform: scale(0.8); }
+
+#mapImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6000px;
+  height: 5000px;
+  z-index: 1; }
+
+#limit_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1; }
+
+#controller {
+  position: fixed;
+  z-index: 2;
+  width: 1%;
+  height: 1%;
+  left: 0;
+  top: 0; }
+  #controller #active {
+    position: absolute;
+    margin: 0;
+    left: calc(90vw - 53px);
+    top: calc(85vh - 53px);
+    width: 53px;
+    height: 53px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    background: url(../img/active.png) 50% 50%/cover no-repeat; }
+  #controller .touch {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; }
+    #controller .touch span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      margin: -10px 0 0 -10px;
+      border-radius: 50%; }
+    #controller .touch.on {
+      background-color: #5557; }
+      #controller .touch.on span {
+        background-color: #3337; }

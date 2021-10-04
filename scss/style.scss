@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import url(./reset.css);
+@import 'character.scss';
+@import 'object.scss';
+@import 'load.scss';
+@import 'ending.scss';
+@font-face {
+    font-family: 'CookieRun-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// 기본 맵 스타일 및 컨트롤러 스타일입니다
+$fieldW: 6000px;
+$fieldH: 5000px;
+@mixin posA($x : 0,$y : 0) {
+    position: absolute;
+    left: $x;
+    top: $y;
+}
+body, html{overflow: hidden; width: 100%; height: 100%; }
+body{position: relative; font-family: "CookieRun-Regular";}
+body *{font-family: inherit;}
+body>p{display: none;}
+#field{ // 메인 맵
+    @include posA; 
+    width: $fieldW;
+    height: $fieldH;
+    transform-origin: 0 0;
+    transition: 1s;
+    z-index: 1;
+    transform: scale(0.8); //  맵 배율 --> 스크립트에 비율값 조정 필요
+}
+#mapImg{ // 메인 맵 배경
+    @include posA; 
+    width: $fieldW;
+    height: $fieldH;
+    z-index: 1;
+}
+#limit_img{ // 이동 제한 구역
+    @include posA; 
+    z-index: -1;
+}
+#controller{ //컨트롤러
+    position: fixed; 
+    z-index: 2;
+    width: 1%; 
+    height: 1%; 
+    left: 0;
+    top: 0;
+    #active{
+        position: absolute;
+        margin: 0;
+        left: calc(90vw - 53px);
+        top: calc(85vh - 53px);
+        width: 53px; 
+        height: 53px; 
+        border: none; 
+        outline: none; 
+        cursor: pointer; 
+        float: right; 
+        background: url(../img/active.png) 50% 50% / cover no-repeat;
+    }
+    .touch{
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            margin: -10px 0 0 -10px;
+            border-radius: 50%;
+        }
+        &.on{
+            background-color: #5557;
+            span{
+                background-color: #3337;
+            }
+        }
+    }
+}

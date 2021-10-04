@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+// 캐릭터 관련 스타일입니다
+
+$back1: 0 0;
+$back2: -140px 0;
+$back3: -280px 0;
+$front1: 0 -200px;
+$front2: -140px -200px;
+$front3: -280px -200px;
+$right1: 0 -400px;
+$right2: -140px -400px;
+$right3: -280px -400px;
+$left1: 0 -600px;
+$left2: -140px -600px;
+$left3: -280px -600px;
+
+@mixin charDefualt { // 캐릭터 기본설정
+    width: 140px;
+    height: 200px;
+    background: url(../img/character.png) $front1 no-repeat;
+    z-index: 10;
+}
+@mixin startPoint($x,$y) { // 스타트 포인트
+    position: absolute;
+    left: #{$x}px;
+    top: #{$y}px;
+    z-index: $y;
+}
+@mixin charAni($dir){ // 움직임 설정
+    @if $dir == back {
+        @keyframes #{$dir}Ani {
+            0%{background-position: $back1;}
+            25%{background-position: $back2;}
+            50%{background-position: $back1;}
+            75%{background-position: $back3;}
+            100%{background-position: $back1;}
+        }
+    } @else if $dir == front {
+        @keyframes #{$dir}Ani {
+            0%{background-position: $front1;}
+            25%{background-position: $front2;}
+            50%{background-position: $front1;}
+            75%{background-position: $front3;}
+            100%{background-position: $front1;}
+        }
+    } @else if $dir == left {
+        @keyframes #{$dir}Ani {
+            0%{background-position: $left1;}
+            25%{background-position: $left2;}
+            50%{background-position: $left1;}
+            75%{background-position: $left3;}
+            100%{background-position: $left1;}
+        }
+    } @else if $dir == right {
+        @keyframes #{$dir}Ani {
+            0%{background-position: $right1;}
+            25%{background-position: $right2;}
+            50%{background-position: $right1;}
+            75%{background-position: $right3;}
+            100%{background-position: $right1;}
+        }
+    }
+    animation: #{$dir}Ani 1000ms 0s infinite step-start;
+}
+@mixin lastDir($dir) { // 이동 멈춤 시 모습
+    @if $dir == back {
+        background-position: $back1;
+    } @else if $dir == front {
+        background-position: $front1;
+    } @else if $dir == left {
+        background-position: $left1;
+    } @else if $dir == right {
+        background-position: $right1;
+    }
+}
+/*  up => 1             down => 4
+    left => 2           right => 8
+    left up => 3        right up => 9
+    left down => 6      right down => 12    */
+#char{
+    @include charDefualt;
+    @include startPoint(570,700);
+    //동작
+    &._1{@include charAni(back);}
+    &._2{@include charAni(left);}
+    &._4{@include charAni(front);}
+    &._8{@include charAni(right);}
+    &._3{@include charAni(left);}
+    &._6{@include charAni(left);}
+    &._9{@include charAni(right);}
+    &._12{@include charAni(right);}
+    //정지
+    &.__1{@include lastDir(back);}
+    &.__2{@include lastDir(left);}
+    &.__4{@include lastDir(front);}
+    &.__8{@include lastDir(right);}
+    &.__3{@include lastDir(left);}
+    &.__6{@include lastDir(left);}
+    &.__9{@include lastDir(right);}
+    &.__12{@include lastDir(right);}
+
+    .ment{
+        position: absolute;
+        display: block;
+        overflow: hidden;
+        bottom: 80%;
+        left: 100%;
+        width: 0;
+        height: 0;
+        background: url(../img/bubble.png) 0 0 / 100% 127px no-repeat;
+        transition: width 300ms, height 300ms;
+        &.move{
+            width: 201px;
+            height: 127px;
+            background: url(../img/bubble_move.png) 0 0 no-repeat;
+            animation: bubbleMove 300ms alternate infinite;
+            @keyframes bubbleMove {
+                from{background: url(../img/bubble_move.png) 0 0 no-repeat;}
+                to{background: url(../img/bubble_move_.png) 0 0 no-repeat;}
+            }
+        }
+        &.get{
+            width: 201px;
+            height: 127px;
+            background: url(../img/bubble_get.png) 0 0 no-repeat;
+            animation: bubbleGet 300ms alternate infinite;
+            @keyframes bubbleGet {
+                from{background: url(../img/bubble_get.png) 0 0 no-repeat;}
+                to{background: url(../img/bubble_get_.png) 0 0 no-repeat;}
+            }
+        }
+        &.ex{
+            width: 127px;
+            height: 127px;
+            background: url(../img/bubble_ex.png) 0 0 no-repeat;
+        }
+        &.ment1{ //거위가 도망쳤잖아!
+            width: 250px;
+            height: 127px;
+            font-size: 20px;
+            line-height: 120px;
+            text-align: center;
+        }
+        &.ment2{ // 황금알이다!!
+            width: 200px;
+            height: 127px;
+            font-size: 20px;
+            line-height: 120px;
+            text-align: center;
+        }
+        &.ment3{ // 알을 주워가며 계속 쫓아 가보자
+            width: 300px;
+            height: 127px;
+            font-size: 20px;
+            line-height: 120px;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+html,body{height: 100%; width: 100%;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, p, a, span, strong, em, img, form, fieldset, legend, input, label, textarea, button, blockquote, table, thead, tbody, tfoot, tr, th, td, caption, abbr, address, sub, sup, var, summary, code, cite, samp, del, dfn, ins, kbd, q, small,b,i,article,aside,canvas,details,figcaption,figure,footer,header,menu,nav,section,time,mark,audio,video{margin: 0; padding: 0;}
+article,aside,details,figure,figcaption,footer,header,menu,nav,section,video{display: block;}
+table{border-collapse: collapse;}
+img, form, fieldset, input, abbr, acronym, select, label{vertical-align: middle;}
+img, form, fieldset{border: none;}
+dl, dt, dd, ul, ol, li{list-style: none;}
+address, caption, cite, code, em, strong, th{font-weight: normal; font-style: normal;}
+caption, th{text-align: left;}
+h1, h2, h3, h4, h5, h6{font-weight: normal; font-size: 100%;}
+q:after,  q:before{content: "";}
+.blind{font-size: 0; width: 0; height: 0; text-indent: -9999px; overflow: hidden; visibility: hidden;}
+
+.skipNav a{display: block; font-size: 0; height: 0; overflow: hidden;}
+.skipNav a:hover, .skipNav a:focus{height: 50px; line-height: 50px; font-size: 25px; background-color: #333; color: #fff; text-align: center;}
+
+.clearfix:after{content: ""; display: block; clear: both;}
+
+
+
+body{font-size: 12px;}
+a:link, a:visited{color: #000; text-decoration: none;}
+a:hover, a:focus, a:active{color: #000; text-decoration: none;}
+
+img{max-width: 100%}
