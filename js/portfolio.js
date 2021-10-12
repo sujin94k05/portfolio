@@ -580,13 +580,13 @@ window.onload = function(){
                 id : 3,
                 title : "반응형 웹 디자인 새창에서 열기",
                 text : "BOBBI BROWN",
-                url : ""
+                url : "http://sujin0594.dothome.co.kr/bb/"
             },
             {
                 id : 4,
                 title : "웹앱 디자인 &amp; 코딩 새창에서 열기",
                 text : "MOMO",
-                url : ""
+                url : "http://sujin0594.dothome.co.kr/app/"
             },
             {
                 id : 5,
