@@ -586,13 +586,13 @@ window.onload = function(){
                 id : 4,
                 title : "웹앱 디자인 &amp; 코딩 새창에서 열기",
                 text : "MOMO",
-                url : "http://sujin0594.dothome.co.kr/app/"
+                url : "http://sujin0594.dothome.co.kr/subpage/momo.html"
             },
             {
                 id : 5,
                 title : "React웹앱 코딩 새창에서 열기",
                 text : "KaKao",
-                url : "https://sujin94k05.github.io/Kakao_react/#/"
+                url : "http://sujin0594.dothome.co.kr/subpage/react.html"
             }
         ]
         function plateGen($id){
