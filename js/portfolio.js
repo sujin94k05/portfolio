@@ -568,13 +568,13 @@ window.onload = function(){
                 id : 1, // 알순서
                 title : "웹 표준, 접근성, 호환성 준수 새창에서 열기", // 알에 마우스 호버했 때 나오는 문구
                 text : "Samsung E.M.", //알에 적힐 글씨
-                url : "http://sujin0594.dothome.co.kr/subpage/samsungE.html" // 알이랑 연결될 주소
+                url : "http://sujin0594.dothome.co.kr/ss/" // 알이랑 연결될 주소
             },
             {
                 id : 2,
                 title : "반응형 웹 마크업 &amp; 코딩 새창에서 열기",
                 text : "CJ One",
-                url : "http://sujin0594.dothome.co.kr/subpage/cjone.html"
+                url : "http://sujin0594.dothome.co.kr/cjone/"
             },
             {
                 id : 3,
@@ -586,13 +586,13 @@ window.onload = function(){
                 id : 4,
                 title : "웹앱 디자인 &amp; 코딩 새창에서 열기",
                 text : "MOMO",
-                url : "http://sujin0594.dothome.co.kr/subpage/momo.html"
+                url : "http://sujin0594.dothome.co.kr/app/"
             },
             {
                 id : 5,
                 title : "React웹앱 코딩 새창에서 열기",
                 text : "KaKao",
-                url : "http://sujin0594.dothome.co.kr/subpage/react.html"
+                url : "https://sujin94k05.github.io/movie_app/"
             }
         ]
         function plateGen($id){
