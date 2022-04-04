@@ -568,7 +568,7 @@ window.onload = function(){
                 id : 1, // 알순서
                 title : "웹 표준, 접근성, 호환성 준수 새창에서 열기", // 알에 마우스 호버했 때 나오는 문구
                 text : "Samsung E.M.", //알에 적힐 글씨
-                url : "http://jeniesko.com/subpage/sse.html" // 알이랑 연결될 주소
+                url : "http://jeniesko.com/subpage/sse.html" //  알이랑 연결될 주소
             },
             {
                 id : 2,
