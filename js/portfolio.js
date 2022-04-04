@@ -592,7 +592,7 @@ window.onload = function(){
                 id : 5,
                 title : "React웹앱 코딩 새창에서 열기",
                 text : "KaKao",
-                url : "https://sujin94k05.github.io/movie_app/"
+                url : " https://sujin94k05.github.io/Kakao_react/"
             }
         ]
         function plateGen($id){
